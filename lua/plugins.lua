@@ -168,19 +168,8 @@ return require('packer').startup({
         "nvim-lua/plenary.nvim"
         },
     }
-    use {
-      "simrat39/symbols-outline.nvim",
-      cmd = { "SymbolsOutline" },
-      config = "require('plugins.symbols)"
-    }
-    use {
-      "hrsh7th/cmp-emoji",
-      after = "nvim-cmp"
-    }
-    -- Snippet engine and snippet template
-    -- use({"SirVer/ultisnips", event = 'InsertEnter'})
-    -- use({ "honza/vim-snippets", after = 'ultisnips'})
-
+    use { "simrat39/symbols-outline.nvim", cmd = { "SymbolsOutline" }, config = "require('plugins.symbols')" }
+    use { "hrsh7th/cmp-emoji", after = "nvim-cmp" }
 
 
 
