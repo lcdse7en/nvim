@@ -121,6 +121,13 @@ lspconfig.pyright.setup {
   on_attach = on_attach,
 }
 
+lspconfig.texlab.setup {
+  filetypes = require('lsp.servers.texlab').filetypes,
+  handlers = handlers,
+  init_options = require('lsp.servers.texlab').init_options,
+  on_attach = on_attach,
+}
+
 for _, server in ipairs { "bashls", "graphql", "html", "volar", "prismals" } do
   lspconfig[server].setup {
     on_attach = on_attach,

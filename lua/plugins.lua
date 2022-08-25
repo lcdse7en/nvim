@@ -30,6 +30,7 @@ return require('packer').startup({
     -- Themes
     use { 'folke/tokyonight.nvim' }
     use { "catppuccin/nvim", as = "catppuccin" }
+    use { 'lunarvim/darkplus.nvim' }
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', config = "require('plugins.treesitter')" }
@@ -58,9 +59,13 @@ return require('packer').startup({
     }
 
     -- LSP Base
-    -- use { 'williamboman/nvim-lsp-installer' }
-    use { 'williamboman/mason.nvim' }
-    use { 'williamboman/mason-lspconfig.nvim' }
+    -- use { 'williamboman/mason.nvim' }
+    -- use { 'williamboman/mason-lspconfig.nvim' }
+    use {
+    "williamboman/mason.nvim",
+    requires = { "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim" },
+    config = "require('plugins.mason')",
+  }
     use { 'neovim/nvim-lspconfig' }
 
     -- LSP Cmp
@@ -126,6 +131,7 @@ return require('packer').startup({
     use { 'p00f/nvim-ts-rainbow', after = { 'nvim-treesitter' } }
     use { 'lukas-reineke/indent-blankline.nvim', config = "require('plugins.indent')" }
     use { 'NvChad/nvim-colorizer.lua', config = "require('plugins.colorizer')" }
+    use { 'ziontee113/color-picker.nvim' }
     use {
       'L3MON4D3/LuaSnip',
       requires = {
@@ -178,6 +184,7 @@ return require('packer').startup({
       requires = {
         "nvim-lua/plenary.nvim"
         },
+      config = "require('plugins.null-ls')"
     }
     use { "simrat39/symbols-outline.nvim", cmd = { "SymbolsOutline" }, config = "require('plugins.symbols')" }
     use { "hrsh7th/cmp-emoji", after = "nvim-cmp" }
