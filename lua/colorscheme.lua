@@ -48,7 +48,7 @@ if vim.fn.has("nvim-0.8") then
     vim.api.nvim_set_hl(0, 'TelescopeTitle', { link = 'EcovimSecondary' });
     vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = "None", fg = "None" });
     vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = "None", fg = "#488DFF" });
-    vim.api.nvim_set_hl(0, 'TelescopeMatching', { link = 'Constant' });
+    vim.api.nvim_set_hl(0, 'TelescopeMatching', { link = 'EcovimSecondary' });
 
     -- Diagnostics
 
@@ -117,7 +117,7 @@ else
     vim.highlight.link('TelescopeTitle', 'EcovimSecondary', true);
     vim.highlight.create('TelescopeNormal', { guibg = "None", guifg = "None" }, false);
     vim.highlight.create('TelescopeBorder', { guibg = "None" }, false);
-    vim.highlight.link('TelescopeMatching', 'Constant', true);
+    vim.highlight.link('TelescopeMatching', 'EcovimSecondary', true);
 
     -- Diagnostics
 
