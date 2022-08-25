@@ -22,7 +22,8 @@ local bookmarks = {
   "http://kkhanju.top/",
   "https://www.kpopn.com/category/news",
   "https://www.extfans.com/",
-  "https://github.com/topics/nvim-config"
+  "https://github.com/topics/nvim-config",
+  "https://github.com/davatorium/rofi-themes"
   -- "https://github.com/glepnir",
   -- "https://github.com/neovim/neovim",
   -- "https://neovim.discourse.group/",
