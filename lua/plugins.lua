@@ -188,7 +188,6 @@ return require('packer').startup({
     }
     use { "simrat39/symbols-outline.nvim", cmd = { "SymbolsOutline" }, config = "require('plugins.symbols')" }
     use { "hrsh7th/cmp-emoji", after = "nvim-cmp" }
-    -- use { "xiyaowong/nvim-transparent", config = "require('plugins.transparent')" }
 
 
 
