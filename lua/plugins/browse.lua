@@ -9,6 +9,7 @@ browse.setup {
 
 local bookmarks = {
   "https://github.com/rockerBOO/awesome-neovim",
+  "https://torrentgalaxy.to/",
   "https://github.com/ecosse3/nvim",
   "https://github.com/Allaman/nvim",
   "https://github.com/christianchiarulli",
