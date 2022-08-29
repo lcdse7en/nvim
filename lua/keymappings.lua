@@ -34,7 +34,11 @@ keymap("n", "<S-p>", "<CMD>lua require('plugins.telescope.pickers.multi-rg')()<C
 keymap("n", "<ESC>", ":noh<CR><CR>", silent)
 
 -- Find word/file across project
-keymap("n", "<Leader>pf", "<CMD>lua require('plugins.telescope').project_files({ default_text = vim.fn.expand('<cword>'), initial_mode = 'normal' })<CR>")
+keymap(
+  "n",
+  "<Leader>pf",
+  "<CMD>lua require('plugins.telescope').project_files({ default_text = vim.fn.expand('<cword>'), initial_mode = 'normal' })<CR>"
+)
 keymap("n", "<Leader>pw", "<CMD>lua require('telescope.builtin').grep_string({ initial_mode = 'normal' })<CR>")
 
 -- Buffers
@@ -90,12 +94,25 @@ keymap("n", "<leader>q", "<cmd>lua require('utils').toggle_quicklist()<CR>", sil
 keymap("n", "ga", "<Plug>(EasyAlign)", silent)
 keymap("x", "ga", "<Plug>(EasyAlign)", silent)
 
+-- Translator
+keymap("n", "<leader>i", "<Plug>Translate", silent)
+keymap("v", "<leader>i", "<Plug>TranslateV", silent)
+keymap("n", "<leader>w", "<Plug>TranslateW", silent)
+keymap("v", "<leader>w", "<Plug>TranslateWV", silent)
+keymap("n", "<leader>r", "<Plug>TranslateR", silent)
+keymap("v", "<leader>r", "<Plug>TranslateRV", silent)
+
 -- Manually invoke speeddating in case switch.vim didn't work
 keymap("n", "<C-a>", ":if !switch#Switch() <bar> call speeddating#increment(v:count1) <bar> endif<CR>", silent)
-keymap("n", "<C-x>", ":if !switch#Switch({'reverse': 1}) <bar> call speeddating#increment(-v:count1) <bar> endif<CR>", silent)
+keymap(
+  "n",
+  "<C-x>",
+  ":if !switch#Switch({'reverse': 1}) <bar> call speeddating#increment(-v:count1) <bar> endif<CR>",
+  silent
+)
 
 -- Open links under cursor in browser with gx
-if vim.fn.has('macunix') == 1 then
+if vim.fn.has "macunix" == 1 then
   keymap("n", "gx", "<cmd>silent execute '!open ' . shellescape('<cWORD>')<CR>", silent)
 else
   keymap("n", "gx", "<cmd>silent execute '!xdg-open ' . shellescape('<cWORD>')<CR>", silent)
@@ -124,20 +141,16 @@ keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'round
 keymap("n", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", silent)
 keymap("v", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", silent)
 
-
 keymap("i", "jj", "<ESC>", silent)
 keymap("n", "Q", ":wq<cr>", silent)
 keymap("n", "S", ":w<cr>", silent)
-
 
 -- Markdown Preview
 keymap("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", silent)
 
 -- Comment
-keymap("n", "<m-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", silent
-)
-keymap("x", "<m-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', silent
-)
+keymap("n", "<m-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", silent)
+keymap("x", "<m-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', silent)
 
 -- Fzf
 keymap("n", "<C-f>", ":FZF<cr>", silent)

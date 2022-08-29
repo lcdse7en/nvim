@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "markdown" },
   callback = function()
-    vim.cmd[[ 
+    vim.cmd [[ 
     inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
     inoremap <buffer> <c-e> <Esc>/<++><CR>:nohlsearch<CR>"_c4l
     inoremap <buffer> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
@@ -20,14 +20,20 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     inoremap <buffer> ,4 ####<Space><Enter><++><Esc>kA
     inoremap <buffer> ,l --------<Enter>
      ]]
-  end })
-
+  end,
+})
 
 vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
 
-vim.cmd [[ 
+vim.cmd [[
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
 ]]
