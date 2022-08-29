@@ -187,7 +187,7 @@ return require('packer').startup({
       config = "require('plugins.null-ls')"
     }
     use { "simrat39/symbols-outline.nvim", cmd = { "SymbolsOutline" }, config = "require('plugins.symbols')" }
-    use { "hrsh7th/cmp-emoji", after = "nvim-cmp" }
+    use { "hrsh7th/cmp-emoji", after = "nvim-cmp", config = "require('plugins.cmp-emoji')" }
 
 
 
