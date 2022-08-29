@@ -151,6 +151,7 @@ cmp.setup {
     { name = 'buffer', priority = 7, keyword_length = 5, option = buffer_option, max_item_count = 8 },
     { name = 'nvim_lua', priority = 5 },
     { name = 'path', priority = 4 },
+    { name = 'emoji', priority = 4 },
     { name = 'calc', priority = 3 },
   },
 

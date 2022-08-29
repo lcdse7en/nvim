@@ -136,7 +136,7 @@ local normal_mode_mappings = {
     p = { '<cmd>BufferPick<CR>',                         'Pick Buffer' },
   },
 
-  c = {
+  l = {
     name = "LSP",
     a = { 'code action' },
     d = { '<cmd>TroubleToggle<CR>',                           'local diagnostics' },

@@ -77,6 +77,7 @@ return require('packer').startup({
     use { 'hrsh7th/cmp-cmdline', after = 'cmp-path' }
     use { 'hrsh7th/cmp-calc', after = 'cmp-cmdline' }
     use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp', after = 'cmp-calc' }
+    use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
     use { 'David-Kunz/cmp-npm', after = 'cmp-tabnine', requires = 'nvim-lua/plenary.nvim',
       config = "require('plugins.cmp-npm')" }
     use { 'saadparwaiz1/cmp_luasnip', after = 'cmp-npm' }
@@ -95,7 +96,7 @@ return require('packer').startup({
     -- General
     use { 'AndrewRadev/switch.vim' }
     use { 'AndrewRadev/splitjoin.vim' }
-    use { 'numToStr/Comment.nvim', config = "require('plugins.comment')" }
+    -- use { 'numToStr/Comment.nvim', config = "require('plugins.comment')" }
     use { 'LudoPinelli/comment-box.nvim' }
     use { 'akinsho/nvim-toggleterm.lua', branch = 'main', config = "require('plugins.toggleterm')" }
     use { 'tpope/vim-repeat' }
@@ -187,7 +188,11 @@ return require('packer').startup({
       config = "require('plugins.null-ls')"
     }
     use { "simrat39/symbols-outline.nvim", cmd = { "SymbolsOutline" }, config = "require('plugins.symbols')" }
-    use { "hrsh7th/cmp-emoji", after = "nvim-cmp", config = "require('plugins.cmp-emoji')" }
+
+    -- Comment
+    use { "b3nj5m1n/kommentary", config = "require('plugins.kommentary')" }
+
+
 
 
 

@@ -1,5 +1,5 @@
 require'cmp'.setup {
   sources = {
-    { name = 'emoji' }
+    { name = 'emoji', insert = false }
   }
 }
