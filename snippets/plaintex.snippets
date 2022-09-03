@@ -33,3 +33,22 @@ snippet href href
 	\\href{${1:Net Address}}{${2:Net Name}}
 	$0
 
+snippet doc docmentclass
+	\\documentclass[letterpaper, 10pt]{article}
+	\\usepackage{xeCJK}
+	\\usepackage{tabu}
+
+	\\setmainfont{Noto Serif}
+	\\setCJKmainfont{Noto Serif CJK KR} 
+	\\setCJKsansfont{Noto Serif CJK KR}
+	\\setCJKmonofont{Noto Serif CJK KR}
+
+	\\begin{document}
+	${1:document}
+	\\end{document}
+
+snippet use usepackage
+  \\usepackage{${1:package}}
+  $0
+
+
