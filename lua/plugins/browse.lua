@@ -11,6 +11,7 @@ local bookmarks = {
   "https://github.com/rockerBOO/awesome-neovim",
   "https://torrentgalaxy.to/",
   "https://www.btsj5.com/",
+  "https://texdoc.org/index.html",
   "https://github.com/ecosse3/nvim",
   "https://github.com/Allaman/nvim",
   "https://github.com/christianchiarulli",
@@ -25,7 +26,7 @@ local bookmarks = {
   "https://www.kpopn.com/category/news",
   "https://www.extfans.com/",
   "https://unicode.org/emoji/charts/full-emoji-list.html",
-  "https://github.com/davatorium/rofi-themes"
+  "https://github.com/davatorium/rofi-themes",
   -- "https://github.com/glepnir",
   -- "https://github.com/neovim/neovim",
   -- "https://neovim.discourse.group/",
