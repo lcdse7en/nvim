@@ -25,6 +25,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
 
+vim.cmd "autocmd BufWritePost * :%s/s+$//e"
+
 vim.cmd [[
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
