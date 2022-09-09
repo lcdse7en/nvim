@@ -1,7 +1,7 @@
-require'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup {
   ensure_installed = {}, -- one of "all", or a list of languages
-  sync_install = false,            -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "haskell" },  -- list of parsers to ignore installing
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  ignore_install = { "haskell" }, -- list of parsers to ignore installing
   autotag = {
     enable = true,
   },
@@ -14,19 +14,19 @@ require'nvim-treesitter.configs'.setup {
   incremental_selection = {
     enable = false,
     keymaps = {
-      init_selection    = "<leader>gnn",
-      node_incremental  = "<leader>gnr",
+      init_selection = "<leader>gnn",
+      node_incremental = "<leader>gnr",
       scope_incremental = "<leader>gne",
-      node_decremental  = "<leader>gnt",
+      node_decremental = "<leader>gnt",
     },
   },
 
   indent = {
-    enable = true
+    enable = true,
   },
 
   rainbow = {
-    enable = true
+    enable = true,
   },
 
   context_commentstring = {
@@ -80,7 +80,7 @@ require'nvim-treesitter.configs'.setup {
   textsubjects = {
     enable = true,
     keymaps = {
-      ['<cr>'] = 'textsubjects-smart', -- works in visual mode
-    }
+      ["<cr>"] = "textsubjects-smart", -- works in visual mode
+    },
   },
 }

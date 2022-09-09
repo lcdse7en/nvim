@@ -11,9 +11,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     inoremap <buffer> ,i ** <++><Esc>F*i
     inoremap <buffer> ,d `` <++><Esc>F`i
     inoremap <buffer> ,c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
-    inoremap <buffer> ,m - [ ] 
-    inoremap <buffer> ,p ![](<++>) <++><Esc>F[a
-    inoremap <buffer> ,a [](<++>) <++><Esc>F[a
+    inoremap <buffer> ,m - [ ]
+    inoremap <buffer> ,p ![](<++>)<++><Esc>F[a
+    inoremap <buffer> ,a [](<++>)<++><Esc>F[a
     inoremap <buffer> ,1 #<Space><Enter><++><Esc>kA
     inoremap <buffer> ,2 ##<Space><Enter><++><Esc>kA
     inoremap <buffer> ,3 ###<Space><Enter><++><Esc>kA
