@@ -258,6 +258,9 @@ return require("packer").startup {
       end,
     }
 
+    use { "hrsh7th/cmp-vsnip" }
+    use { "hrsh7th/vim-vsnip" }
+
     if packer_bootstrap then
       require("packer").sync()
     end

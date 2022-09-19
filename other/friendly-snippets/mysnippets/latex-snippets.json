@@ -1,0 +1,58 @@
+{
+  "lxyoucan": {
+    "prefix": "itkey",
+    "body": [
+      "function ${1:name}($2)",
+      "\t${3:print('祝您身体健康，万事如意！')}",
+      "end"
+    ]
+  },
+
+  "usepackage": {
+    "prefix": "use",
+    "body": ["\\usepackage{${1:PackageName}}", "${2}"]
+  },
+
+  "tkz-euclide draw and label points": {
+    "prefix": "pts",
+    "body": [
+      "\\tkzDrawPoints($1)",
+      "\\tkzLabelPoints[${2|above,below|} ${3|left,right|}]($1)"
+    ],
+    "description": "绘制并标注点"
+  },
+
+  "Custum section": {
+    "prefix": "sec",
+    "body": [
+      "\\section{${1:Section Name} \\textcolor{green}{\\faIcon{github}} \\textcolor{blue}{\\faIcon{code}} \\faIcon{university} \\textcolor{cyan}{\\faIcon{google-plus}} \\faIcon{at}}"
+    ],
+    "description": "自定义节标题"
+  },
+
+  "Custom figure": {
+    "prefix": "fig",
+    "body": [
+      "\\begin{figure}[hbt!]",
+      "\\centering",
+      "\\begin{minipage}{0.49\\textwidth}",
+      "\t\\centering",
+      "\t\\includegraphics[width=\\textwidth]{${1:Path}}",
+      "\t\\caption{}",
+      "\\end{minipage}",
+      "\\begin{minipage}{0.49\\textwidth}",
+      "\t\\centering",
+      "\t\\includegraphics[width=\\textwidth]{${2:Path}}",
+      "\t\\caption{}",
+      "\\end{minipage}",
+      "\\end{figure}"
+    ],
+    "description": "自定义图片环境"
+  },
+
+  "Custom includegraphics": {
+    "prefix": "includegs",
+    "body": ["\\includegraphics[width=\\textwidth]{${1:images path}}"],
+    "description": "自定义插图"
+  }
+}

@@ -17,7 +17,9 @@ if not snip_status_ok then
 end
 
 require("luasnip/loaders/from_snipmate").lazy_load { paths = { "./snippets" } }
-require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip/loaders/from_vscode").load {
+  paths = { "~/.config/nvim/other/friendly-snippets" },
+}
 
 -- Utils
 local check_backspace = function()
@@ -54,6 +56,7 @@ cmp.setup {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
     end,
   },
 
@@ -154,6 +157,7 @@ cmp.setup {
     { name = "emoji", priority = 4 },
     { name = "calc", priority = 3 },
     { name = "orgmode", priority = 3 },
+    { name = "vsnip" },
   },
 
   sorting = {

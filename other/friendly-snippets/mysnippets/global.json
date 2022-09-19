@@ -1,0 +1,16 @@
+{
+  "snippets": {
+    "prefix": "snip",
+    "body": [
+      "\"${1:described}\": {",
+      "\t\"prefix\": \"${4:pre}\",",
+      "\t\"body\": [",
+      "\t\t\"${2:1hine}\",",
+      "\t\t\"${3:2hine}\",",
+      "\t],",
+      "\t\"description\": \"${5:description}\"",
+      "}"
+    ],
+    "description": "自定义代码段"
+  }
+}
