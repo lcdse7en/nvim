@@ -27,6 +27,44 @@
     "description": "自定义插图"
   },
 
+  "documentclass": {
+    "prefix": "doc",
+    "body": [
+      "\\documentclass[letterpaper, 10pt]{article}",
+      "\\usepackage{${1:packageName}}",
+      "",
+      "\\begin{document}",
+      "${2:Beginning}",
+      "\\end{document}"
+    ],
+    "description": "自定义documentclass环境"
+  },
+
+  "Custom begin environment": {
+    "prefix": "beg",
+    "body": ["\\begin{$1}", "", "\\end{$1}"],
+    "description": "自定义begin环境"
+  },
+
+  "Custom table environment": {
+    "prefix": "mytb",
+    "body": [
+      "\\begin{mytblr}[",
+      "\t\tcaption = {caption Name},",
+      "\t]{",
+      "\t\tcolspec = {|l|X[2.8]|X[2.8]|X[2.8]|X[2.8]|},",
+      "\t\t}",
+      "\t\t\\myhline",
+      "\t\t\\SetRow{c} ID & column1  & column2  & column3  & column4 \\\\\\",
+      "\t\t\\myhline",
+      "\t\t\\mycnta & ${1:text1} & text2 & test3 & test 4 \\\\\\",
+      "\t\t",
+      "\t\t\\myhline",
+      "\\end{mytblr}"
+    ],
+    "description": "自定义table环境"
+  },
+
   "Custom minipage environment": {
     "prefix": "mini",
     "body": [
