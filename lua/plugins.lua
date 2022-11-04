@@ -5,7 +5,15 @@ local packer_bootstrap = nil
 
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap =
-    fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
+    -- fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
+    fn.system {
+      "git",
+      "clone",
+      "--depth",
+      "1",
+      "https://codechina.csdn.net/mirrors/wbthomason/packer.nvim",
+      install_path,
+    }
 end
 
 return require("packer").startup {
@@ -84,7 +92,7 @@ return require("packer").startup {
     use { "hrsh7th/cmp-cmdline", after = "cmp-path" }
     use { "hrsh7th/cmp-calc", after = "cmp-cmdline" }
     use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp", after = "cmp-calc" }
-    use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
+    --use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
     use {
       "David-Kunz/cmp-npm",
       after = "cmp-tabnine",
@@ -244,7 +252,6 @@ return require("packer").startup {
 
     -- Traslator
     use { "voldikss/vim-translator", config = "require('plugins.translator')" }
-
 
     use { "hrsh7th/cmp-vsnip" }
     use { "hrsh7th/vim-vsnip" }
