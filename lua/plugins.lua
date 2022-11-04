@@ -245,18 +245,6 @@ return require("packer").startup {
     -- Traslator
     use { "voldikss/vim-translator", config = "require('plugins.translator')" }
 
-    -- orgnode
-    use {
-      "nvim-orgmode/orgmode",
-      ft = { "org" },
-      config = "require('plugins.orgmode')",
-    }
-    use {
-      "akinsho/org-bullets.nvim",
-      config = function()
-        require("org-bullets").setup()
-      end,
-    }
 
     use { "hrsh7th/cmp-vsnip" }
     use { "hrsh7th/vim-vsnip" }
