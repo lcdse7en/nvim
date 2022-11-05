@@ -30,6 +30,7 @@ mason_lsp.setup {
     "vuels",
     "volar",
     "prismals",
+    "pyright",
   },
 
   -- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
@@ -125,7 +126,14 @@ lspconfig.vuels.setup {
   on_attach = on_attach,
 }
 
-for _, server in ipairs { "bashls", "emmet_ls", "graphql", "html", "volar", "prismals" } do
+lspconfig.pyright.setup {
+  filetypes = require("lsp.servers.pyright").filetypes,
+  handlers = handlers,
+  init_options = require("lsp.servers.pyright").init_options,
+  on_attach = on_attach,
+}
+
+for _, server in ipairs { "bashls", "emmet_ls", "graphql", "html", "volar", "prismals", "pyright" } do
   lspconfig[server].setup {
     on_attach = on_attach,
     capabilities = capabilities,
