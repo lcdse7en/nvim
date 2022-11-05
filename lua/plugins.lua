@@ -256,6 +256,15 @@ return require("packer").startup {
     use { "hrsh7th/cmp-vsnip" }
     use { "hrsh7th/vim-vsnip" }
 
+    -- fcitx5 智能输入法切换
+    use {
+      "sei40kr/auto-im.nvim",
+      event = { "InsertEnter *", "CmdlineEnter *" },
+      config = function()
+        require("auto-im").setup()
+      end,
+    }
+
     if packer_bootstrap then
       require("packer").sync()
     end

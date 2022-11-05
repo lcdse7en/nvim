@@ -39,3 +39,9 @@ augroup FormatAutogroup
   autocmd BufWritePost * FormatWrite
 augroup END
 ]]
+
+vim.cmd [[
+    let fcitx5state=system("fcitx5-remote")
+    autocmd InsertLeave * :silent let fcitx5state=system("fcitx5-remote")[0] | silent !fcitx5-remote -c
+    autocmd InsertEnter * :silent if fcitx5state == 2 | call system("fcitx5-remote -o") | endif
+]]
