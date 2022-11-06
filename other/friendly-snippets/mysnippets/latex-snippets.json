@@ -14,7 +14,7 @@
   },
 
   "Custum section": {
-    "prefix": "sec",
+    "prefix": "mysec",
     "body": [
       "\\section{${1:Section Name} \\textcolor{green}{\\faIcon{github}} \\textcolor{blue}{\\faIcon{code}} \\faIcon{university} \\textcolor{cyan}{\\faIcon{google-plus}} \\faIcon{at}}"
     ],
@@ -22,13 +22,13 @@
   },
 
   "Custom includegraphics": {
-    "prefix": "includegs",
+    "prefix": "myincludegs",
     "body": ["\\includegraphics[width=\\textwidth]{${1:images path}}"],
     "description": "自定义插图"
   },
 
   "documentclass": {
-    "prefix": "doc",
+    "prefix": "mydoc",
     "body": [
       "\\documentclass[letterpaper, 10pt]{article}",
       "\\usepackage[margin=0.45in]{geometry}",
@@ -43,7 +43,7 @@
       "\\usepackage{chngcntr}",
       "\\usepackage{fontawesome5}",
       "\\usepackage{newclude}",
-      "\\usepackage{minted}",
+      "%\\usepackage{minted} % sudo pip install pygments % --shell-escape",
       "\\usepackage{tabularray}",
       "\\usepackage[customcolors, shade]{hf-tikz}",
       "\\usepackage{tkz-euclide}",
@@ -53,7 +53,7 @@
       "\\setCJKsansfont{Noto Sans CJK SC}",
       "\\setCJKmonofont{Noto Sans CJK SC}",
       "",
-      "\\usemintedstyle{xcode}",
+      "%\\usemintedstyle{xcode} % pygmentize -L styles [xcode, github-dark]",
       "",
       "\\let\\oldhref\\href",
       "\\renewcommand{\\href}[3][blue]{\\oldhref{#2}{\\color{#1}{#3}}}",
@@ -142,7 +142,7 @@
     "description": "自定义begin环境"
   },
   "Custom Basic Info": {
-    "prefix": "basic",
+    "prefix": "mybasic",
     "body": [
       "\\begin{minipage}[t]{.5\\linewidth}",
       "\\begin{tabular}{rp{.75\\linewidth}}",
