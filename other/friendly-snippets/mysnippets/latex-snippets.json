@@ -243,5 +243,12 @@
     "prefix": "icon",
     "body": ["\\faIcon{${1:tint}}"],
     "description": "fontawesome5 Icons"
+  },
+  "cvfile*": {
+    "prefix": "mycvfile",
+    "body": [
+      "\\cvfile*[comments=text on bottom, lang=c]{${1:title}}{test.bash}"
+    ],
+    "description": "cvfile commets"
   }
 }

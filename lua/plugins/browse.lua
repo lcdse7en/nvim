@@ -8,28 +8,27 @@ browse.setup {
 }
 
 local bookmarks = {
-  "https://github.com/rockerBOO/awesome-neovim",
+  --"https://github.com/rockerBOO/awesome-neovim",
+  "https://github.com/lcdse7en",
+  "https://wangchujiang.com/linux-command/",
+  "https://github.com/ecosse3/nvim",
+  "https://github.com/LukeSmithxyz/voidrice/tree/master/.config",
   "https://torrentgalaxy.to/",
   "https://www.colorhexa.com/color-names",
   "https://texdoc.org/index.html",
-  "https://github.com/ecosse3/nvim",
   "https://github.com/Allaman/nvim",
   "https://github.com/christianchiarulli",
-  "https://github.com/theniceboy",
-  "https://github.com/LukeSmithxyz/voidrice/tree/master/.config",
-  "https://github.com/andreqls",
-  "https://aur.archlinux.org/packages/",
-  "https://suckless.org/",
-  "https://github.com/lcdse7en",
+  --"https://github.com/theniceboy",
+  --"https://github.com/andreqls",
+  --"https://aur.archlinux.org/packages/",
+  --"https://suckless.org/",
   "https://m.weibo.cn/u/1965284462",
   "http://kkhanju.top/",
   "https://www.kpopn.com/category/news",
   "https://www.extfans.com/",
   "https://unicode.org/emoji/charts/full-emoji-list.html",
-  "https://github.com/davatorium/rofi-themes",
+  --"https://github.com/davatorium/rofi-themes",
   -- "https://github.com/glepnir",
-  -- "https://github.com/neovim/neovim",
-  -- "https://neovim.discourse.group/",
 }
 
 local function command(name, rhs, opts)
