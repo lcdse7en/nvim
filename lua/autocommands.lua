@@ -33,7 +33,6 @@ autocmd BufReadPost *
     \   exe "normal g`\"" |
     \ endif
 
-
 augroup FormatAutogroup
   autocmd!
   autocmd BufWritePost * FormatWrite

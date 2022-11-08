@@ -3,12 +3,12 @@ local M = {}
 M.settings = {
   css = {
     lint = {
-      unknownAtRules = "ignore",
+      unknownAtRules = 'ignore',
     },
   },
   scss = {
     lint = {
-      unknownAtRules = "ignore",
+      unknownAtRules = 'ignore',
     },
   },
 }

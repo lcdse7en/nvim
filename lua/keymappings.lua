@@ -31,7 +31,7 @@ keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>"
 keymap("n", "<S-p>", "<CMD>lua require('plugins.telescope.pickers.multi-rg')()<CR>")
 
 -- Remove highlights
-keymap("n", "<ESC>", ":noh<CR><CR>", silent)
+keymap("n", "<ESC>", ":noh<CR>", silent)
 
 -- Find word/file across project
 keymap(

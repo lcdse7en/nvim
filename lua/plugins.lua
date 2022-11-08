@@ -5,15 +5,7 @@ local packer_bootstrap = nil
 
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap =
-    -- fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
-    fn.system {
-      "git",
-      "clone",
-      "--depth",
-      "1",
-      "https://codechina.csdn.net/mirrors/wbthomason/packer.nvim",
-      install_path,
-    }
+    fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
 end
 
 return require("packer").startup {
@@ -23,17 +15,9 @@ return require("packer").startup {
 
     -- Needed to load first
     use { "lewis6991/impatient.nvim" }
-    use { "nathom/filetype.nvim" }
     use { "nvim-lua/plenary.nvim" }
     use { "kyazdani42/nvim-web-devicons" }
-    use {
-
-      "goolord/alpha-nvim",
-      requires = { "kyazdani42/nvim-web-devicons" },
-      config = function()
-        require("alpha").setup(require("alpha.themes.startify").config)
-      end,
-    }
+    use { "goolord/alpha-nvim", config = "require('plugins.alpha')" }
 
     -- Themes
     use { "folke/tokyonight.nvim" }
@@ -47,7 +31,7 @@ return require("packer").startup {
     use {
       "m-demare/hlargs.nvim",
       config = function()
-        require("hlargs").setup()
+        require("hlargs").setup { color = "#F7768E" }
       end,
     }
 
@@ -74,13 +58,8 @@ return require("packer").startup {
     }
 
     -- LSP Base
-    -- use { 'williamboman/mason.nvim' }
-    -- use { 'williamboman/mason-lspconfig.nvim' }
-    use {
-      "williamboman/mason.nvim",
-      requires = { "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim" },
-      config = "require('plugins.mason')",
-    }
+    use { "williamboman/mason.nvim" }
+    use { "williamboman/mason-lspconfig.nvim" }
     use { "neovim/nvim-lspconfig" }
 
     -- LSP Cmp
@@ -92,7 +71,6 @@ return require("packer").startup {
     use { "hrsh7th/cmp-cmdline", after = "cmp-path" }
     use { "hrsh7th/cmp-calc", after = "cmp-cmdline" }
     use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp", after = "cmp-calc" }
-    use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
     use {
       "David-Kunz/cmp-npm",
       after = "cmp-tabnine",
@@ -106,9 +84,12 @@ return require("packer").startup {
     use { "onsails/lspkind-nvim" }
     use { "folke/lsp-trouble.nvim", config = "require('plugins.trouble')" }
     use { "nvim-lua/popup.nvim" }
-    -- use { 'ChristianChiarulli/nvim-gps', branch = 'text_hl', config = "require('plugins.gps')", after = 'nvim-treesitter' }
-    use { "SmiteshP/nvim-gps", config = "require('plugins.gps')", after = "nvim-treesitter" }
-    use { "jose-elias-alvarez/nvim-lsp-ts-utils", after = { "nvim-treesitter" } }
+    use {
+      "ChristianChiarulli/nvim-gps",
+      branch = "text_hl",
+      config = "require('plugins.gps')",
+      after = "nvim-treesitter",
+    }
     use { "jose-elias-alvarez/typescript.nvim" }
     use {
       "axelvc/template-string.nvim",
@@ -116,18 +97,28 @@ return require("packer").startup {
         require("template-string").setup()
       end,
     }
+    use {
+      "lvimuser/lsp-inlayhints.nvim",
+      config = function()
+        require("lsp-inlayhints").setup()
+      end,
+    }
 
     -- General
     use { "AndrewRadev/switch.vim" }
     use { "AndrewRadev/splitjoin.vim" }
-    -- use { 'numToStr/Comment.nvim', config = "require('plugins.comment')" }
+    --use { 'numToStr/Comment.nvim', config = "require('plugins.comment')" }
     use { "LudoPinelli/comment-box.nvim" }
     use { "akinsho/nvim-toggleterm.lua", branch = "main", config = "require('plugins.toggleterm')" }
     use { "tpope/vim-repeat" }
     use { "tpope/vim-speeddating" }
     use { "dhruvasagar/vim-table-mode" }
-    use { "mg979/vim-visual-multi" }
-    use { "junegunn/vim-easy-align" }
+    use {
+      "mg979/vim-visual-multi",
+      config = function()
+        vim.g.VM_leader = ";"
+      end,
+    }
     use { "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" }
     use { "nacro90/numb.nvim", config = "require('plugins.numb')" }
     use { "folke/todo-comments.nvim", config = "require('plugins.todo-comments')" }
@@ -139,12 +130,11 @@ return require("packer").startup {
       end,
       disable = not EcoVim.plugins.zen.enabled,
     }
-    use { "ggandor/lightspeed.nvim" }
+    --use { "ggandor/lightspeed.nvim", config = "require('plugins.lightspeed')" }
     use { "folke/which-key.nvim", config = "require('plugins.which-key')", event = "BufWinEnter" }
     use { "ecosse3/galaxyline.nvim", after = "nvim-gps", config = "require('plugins.galaxyline')", event = "BufWinEnter" }
     use {
       "romgrk/barbar.nvim",
-      branch = "feat/wipeout-cmds",
       requires = { "kyazdani42/nvim-web-devicons" },
       config = "require('plugins.barbar')",
     }
@@ -181,20 +171,19 @@ return require("packer").startup {
       end,
     }
     use { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async", config = "require('plugins.nvim-ufo')" }
+    use {
+      "echasnovski/mini.nvim",
+      config = function()
+        require("mini.align").setup()
+      end,
+    }
 
     -- Snippets & Language & Syntax
     use { "windwp/nvim-autopairs", after = { "nvim-treesitter", "nvim-cmp" }, config = "require('plugins.autopairs')" }
     use { "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } }
     use { "lukas-reineke/indent-blankline.nvim", config = "require('plugins.indent')" }
     use { "NvChad/nvim-colorizer.lua", config = "require('plugins.colorizer')" }
-    use { "ziontee113/color-picker.nvim" }
-    use {
-      "L3MON4D3/LuaSnip",
-      requires = {
-        "rafamadriz/friendly-snippets",
-      },
-      after = "cmp_luasnip",
-    }
+    use { "L3MON4D3/LuaSnip", requires = { "rafamadriz/friendly-snippets" }, after = "cmp_luasnip" }
 
     -- Git
     use {
@@ -204,7 +193,7 @@ return require("packer").startup {
       event = "BufRead",
     }
     use { "sindrets/diffview.nvim", config = "require('plugins.git.diffview')" }
-    use { "akinsho/git-conflict.nvim", config = "require('plugins.git.conflict')" }
+    use { "akinsho/git-conflict.nvim", tag = "*", config = "require('plugins.git.conflict')" }
     use { "ThePrimeagen/git-worktree.nvim", config = "require('plugins.git.worktree')" }
     use { "kdheepak/lazygit.nvim" }
 
@@ -220,12 +209,17 @@ return require("packer").startup {
       config = "require('plugins.neotest')",
     }
 
-    -- Add
+    -- DAP
+    use { "theHamsta/nvim-dap-virtual-text" }
+    use { "rcarriga/nvim-dap-ui" }
+    use { "mfussenegger/nvim-dap", config = "require('plugins.dap')" }
+
+    --------------------------------------
+    --               se7en Add
+    --------------------------------------
     use { "Pocco81/AutoSave.nvim", config = "require('plugins.autosave')" }
-    use { "edluffy/specs.nvim", config = "require('plugins.specs')" }
-    use { "kevinhwang91/nvim-hlslens", config = "require('plugins.nvim-hlslens')" }
     use { "gcmt/wildfire.vim" }
-    use { "windwp/nvim-ts-autotag" }
+    use { "junegunn/fzf.vim" }
     use {
       "lalitmee/browse.nvim",
       requires = {
@@ -233,29 +227,16 @@ return require("packer").startup {
       },
       config = "require('plugins.browse')",
     }
-    use { "junegunn/fzf.vim" }
-    use { "karb94/neoscroll.nvim" }
-    --[[ use {
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = {
-        "nvim-lua/plenary.nvim",
-      },
-      config = "require('plugins.null-ls')",
-    } ]]
     use { "simrat39/symbols-outline.nvim", cmd = { "SymbolsOutline" }, config = "require('plugins.symbols')" }
-
-    -- Comment
-    use { "b3nj5m1n/kommentary", config = "require('plugins.kommentary')" }
-
-    -- Format
-    use { "mhartington/formatter.nvim", config = "require('plugins.format')" }
-
-    -- Traslator
     use { "voldikss/vim-translator", config = "require('plugins.translator')" }
-
+    use { "edluffy/specs.nvim", config = "require('plugins.specs')" }
+    use { "windwp/nvim-ts-autotag" }
+    use { "b3nj5m1n/kommentary", config = "require('plugins.kommentary')" }
     use { "hrsh7th/cmp-vsnip" }
     use { "hrsh7th/vim-vsnip" }
-
+    use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
+    -- Format
+    use { "mhartington/formatter.nvim", config = "require('plugins.format')" }
     -- fcitx5 智能输入法切换
     use {
       "sei40kr/auto-im.nvim",
@@ -264,6 +245,7 @@ return require("packer").startup {
         require("auto-im").setup()
       end,
     }
+    --------------------------------------
 
     if packer_bootstrap then
       require("packer").sync()

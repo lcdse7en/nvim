@@ -1,6 +1,6 @@
 local M = {}
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.preselectSupport = true
@@ -11,10 +11,10 @@ capabilities.textDocument.completion.completionItem.commitCharactersSupport = tr
 capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
 capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {
-    "documentation",
-    "detail",
-    "additionalTextEdits",
-  },
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
 }
 capabilities.textDocument.codeAction = {
   dynamicRegistration = false,
@@ -35,7 +35,7 @@ capabilities.textDocument.codeAction = {
 }
 capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
-  lineFoldingOnly = true,
+  lineFoldingOnly = true
 }
 
 local on_attach = function(client, bufnr)
@@ -46,9 +46,7 @@ local on_attach = function(client, bufnr)
   -- client.server_capabilities.documentFormattingProvider = false
   -- client.server_capabilities.documentRangeFormattingProvider = false
 
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
-  end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
@@ -73,57 +71,55 @@ end
 local function filterReactDTS(value)
   -- Depending on typescript version either uri or targetUri is returned
   if value.uri then
-    return string.match(value.uri, "%.d.ts") == nil
+    return string.match(value.uri, '%.d.ts') == nil
   elseif value.targetUri then
-    return string.match(value.targetUri, "%.d.ts") == nil
+    return string.match(value.targetUri, '%.d.ts') == nil
   end
 end
 
 local handlers = {
   ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = EcoVim.ui.float.border }),
   ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = EcoVim.ui.float.border }),
-  ["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    { virtual_text = EcoVim.lsp.virtual_text }
-  ),
-  ["textDocument/definition"] = function(err, result, method, ...)
+  ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
+    { virtual_text = EcoVim.lsp.virtual_text }),
+  ['textDocument/definition'] = function(err, result, method, ...)
     if vim.tbl_islist(result) and #result > 1 then
       local filtered_result = filter(result, filterReactDTS)
-      return vim.lsp.handlers["textDocument/definition"](err, filtered_result, method, ...)
+      return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
     end
 
-    vim.lsp.handlers["textDocument/definition"](err, result, method, ...)
-  end,
+    vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+  end
 }
 
 local settings = {
   typescript = {
     inlayHints = {
-      includeInlayParameterNameHints = "all",
+      includeInlayParameterNameHints = 'all',
       includeInlayParameterNameHintsWhenArgumentMatchesName = false,
       includeInlayFunctionParameterTypeHints = true,
       includeInlayVariableTypeHints = false,
       includeInlayPropertyDeclarationTypeHints = true,
       includeInlayFunctionLikeReturnTypeHints = false,
       includeInlayEnumMemberValueHints = true,
-    },
+    }
   },
   javascript = {
     inlayHints = {
-      includeInlayParameterNameHints = "all",
+      includeInlayParameterNameHints = 'all',
       includeInlayParameterNameHintsWhenArgumentMatchesName = false,
       includeInlayFunctionParameterTypeHints = true,
       includeInlayVariableTypeHints = false,
       includeInlayPropertyDeclarationTypeHints = true,
       includeInlayFunctionLikeReturnTypeHints = false,
       includeInlayEnumMemberValueHints = true,
-    },
-  },
+    }
+  }
 }
 
-M.capabilities = capabilities
-M.on_attach = on_attach
-M.handlers = handlers
-M.settings = settings
+M.capabilities = capabilities;
+M.on_attach = on_attach;
+M.handlers = handlers;
+M.settings = settings;
 
 return M
