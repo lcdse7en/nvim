@@ -143,7 +143,7 @@ keymap("v", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", silent)
 
 keymap("i", "jj", "<ESC>", silent)
 keymap("n", "Q", ":wq<cr>", silent)
-keymap("n", "S", ":w<cr>", silent)
+keymap("n", "W", ":w<cr>", silent)
 
 -- Markdown Preview
 keymap("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", silent)

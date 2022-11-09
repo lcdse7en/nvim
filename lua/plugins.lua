@@ -130,7 +130,7 @@ return require("packer").startup {
       end,
       disable = not EcoVim.plugins.zen.enabled,
     }
-    --use { "ggandor/lightspeed.nvim", config = "require('plugins.lightspeed')" }
+    use { "ggandor/lightspeed.nvim", config = "require('plugins.lightspeed')" }
     use { "folke/which-key.nvim", config = "require('plugins.which-key')", event = "BufWinEnter" }
     use { "ecosse3/galaxyline.nvim", after = "nvim-gps", config = "require('plugins.galaxyline')", event = "BufWinEnter" }
     use {
