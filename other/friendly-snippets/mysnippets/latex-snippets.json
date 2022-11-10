@@ -181,7 +181,7 @@
   },
 
   "Custom minipage environment": {
-    "prefix": "mini",
+    "prefix": "mymini",
     "body": [
       "\\begin{minipage}{0.49\\textwidth}",
       "\\centering",
@@ -192,7 +192,7 @@
   },
 
   "Custom figure": {
-    "prefix": "fig",
+    "prefix": "myfig",
     "body": [
       "\\begin{figure}[hbt!]",
       "\\centering",
@@ -225,9 +225,9 @@
       "\tbaselinestretch=1.2,",
       "\tfontsize=\\normalsize, % huge, LARGE, large, normalsize, small, footnotesize, scriptsize",
       "\thighlightcolor=cyan!50,",
-      "\thighlightlines={${3:1,3}},",
+      "\thighlightlines={${2:1,3}},",
       "\tbreaklines]{${1:tex}}",
-      "\t${2:code}",
+      "\t${3:code}",
       "\\end{minted}"
     ],
     "description": "自定义minted环境"
@@ -247,7 +247,7 @@
   "cvfile*": {
     "prefix": "mycvfile",
     "body": [
-      "\\cvfile*[comments=text on bottom, lang=c]{${1:title}}{test.bash}"
+      "\\cvfile*[comments=${3:text on bottom}, lang=c]{${2:title}}{test/${1:file}}"
     ],
     "description": "cvfile commets"
   }

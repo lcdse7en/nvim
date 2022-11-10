@@ -100,7 +100,7 @@ cmp.setup {
       "i",
       "s",
     }),
-    ["<C-l>"] = cmp.mapping(function(fallback)
+    ["<C-j>"] = cmp.mapping(function(fallback)
       if luasnip.expandable() then
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
@@ -112,7 +112,7 @@ cmp.setup {
       "i",
       "s",
     }),
-    ["<C-h>"] = cmp.mapping(function(fallback)
+    ["<C-k>"] = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
@@ -156,7 +156,6 @@ cmp.setup {
     { name = "path", priority = 4 },
     { name = "emoji", priority = 4 },
     { name = "calc", priority = 3 },
-    { name = "orgmode", priority = 3 },
     { name = "vsnip" },
   },
 
