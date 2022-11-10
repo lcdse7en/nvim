@@ -245,7 +245,7 @@ return require("packer").startup {
         require("auto-im").setup()
       end,
     }
-    --------------------------------------
+    -------------------------------------
 
     if packer_bootstrap then
       require("packer").sync()
