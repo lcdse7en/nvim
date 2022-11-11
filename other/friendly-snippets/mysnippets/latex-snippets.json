@@ -45,6 +45,7 @@
       "\\usepackage{amsfonts}",
       "\\usepackage{amssymb}",
       "\\usepackage[runin]{abstract}",
+      "\\usepackage{tcolorbox}",
       "\\usepackage{enumitem}",
       "\\usepackage{tasks}",
       "\\usepackage[colorlinks=true,urlcolor=Blue]{hyperref}",
