@@ -272,13 +272,24 @@
       "\\definecolor{${2:defcolornewname}}{RGB}{${1:255,148,204}}"
     ],
     "description": "自定义以RGB为格式的颜色"
-  }
-  ,
+  },
   "def xcolor HTML": {
     "prefix": "defch",
     "body": [
       "\\definecolor{${2:defcolornewname}}{HTML}{${1:FF94CC}}"
     ],
     "description": "自定义以RGB为格式的颜色"
+  },
+  "def fenlu": {
+    "prefix": "myfl",
+    "body": [
+      "\\begin{alignat*}{2}",
+      "\t借：& ${1:原材料}  \\quad    & ${2:dorpreNumber}. & ${3:dotbackNumber}\\\\\\",
+      "      & ${5:固定资产}\\quad    &     .& \\\\\\",
+      "\t贷：& ${4:银行存款}\\quad    &     .& \\\\\\",
+      "      & ${6:累积折旧}\\quad    &     .& \\\\\\",
+      "\\end{alignat*}"
+    ],
+    "description": "自定义会计分录"
   }
 }
