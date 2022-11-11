@@ -21,6 +21,14 @@
     "description": "自定义节标题"
   },
 
+  "Custom subsection": {
+    "prefix": "mysubs",
+    "body": [
+      "\\subsection{1:Subsection Name}"
+    ],
+    "description": "自定义字节标题"
+  },
+
   "Custom includegraphics": {
     "prefix": "myincludegs",
     "body": ["\\includegraphics[width=\\textwidth]{${1:images path}}"],
@@ -31,8 +39,12 @@
     "prefix": "mydoc",
     "body": [
       "\\documentclass[letterpaper, 10pt]{article}",
+      "\\usepackage[dvipsnames, svgnames, x11names]{xcolor}",
       "\\usepackage[margin=0.45in]{geometry}",
-      "\\usepackage[dvipsnames]{xcolor}",
+      "\\usepackage{amsmath, amsfonts, amssymb}",
+      "\\usepackage[runin]{abstract}",
+      "\\usepackage{enumitem}",
+      "\\usepackage{tasks}",
       "\\usepackage[colorlinks=true,urlcolor=Blue]{hyperref}",
       "\\usepackage{graphicx}",
       "\\usepackage{tabularray}",

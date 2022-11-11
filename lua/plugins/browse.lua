@@ -16,6 +16,7 @@ local bookmarks = {
   "https://www.kpopn.com/category/news",
   "https://github.com/ecosse3/nvim",
   "https://github.com/LukeSmithxyz/voidrice/tree/master/.config",
+  "https://fontawesome.com/v5/search",
   "https://torrentgalaxy.to/",
   "https://github.com/Allaman/nvim",
   "https://github.com/christianchiarulli",
