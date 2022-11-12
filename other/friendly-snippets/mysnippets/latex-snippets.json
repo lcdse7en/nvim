@@ -24,7 +24,7 @@
   "Custom subsection": {
     "prefix": "mysubs",
     "body": [
-      "\\subsection{1:Subsection Name}"
+      "\\subsection{${1:Subsection Name}}"
     ],
     "description": "自定义字节标题"
   },
@@ -45,6 +45,7 @@
       "\\usepackage{amsfonts}",
       "\\usepackage{amssymb}",
       "\\usepackage[runin]{abstract}",
+      "\\usepackage{lipsum} % 插入例子",
       "\\usepackage{tcolorbox}",
       "\\usepackage{enumitem}",
       "\\usepackage{tasks}",
@@ -259,14 +260,15 @@
     "body": ["\\faIcon{${1:tint}}"],
     "description": "fontawesome5 Icons"
   },
+
   "cvfile*": {
     "prefix": "mycvfile",
     "body": [
       "\\cvfile*[comments=${3:text on bottom}, lang=c]{${2:title}}{test/${1:file}}"
     ],
     "description": "cvfile commets"
-  }
-  ,
+  },
+
   "def xcolor RGB": {
     "prefix": "defcr",
     "body": [
@@ -274,6 +276,7 @@
     ],
     "description": "自定义以RGB为格式的颜色"
   },
+
   "def xcolor HTML": {
     "prefix": "defch",
     "body": [
@@ -281,6 +284,7 @@
     ],
     "description": "自定义以RGB为格式的颜色"
   },
+
   "def fenlu": {
     "prefix": "myfl",
     "body": [
@@ -292,5 +296,43 @@
       "\\end{alignat*}"
     ],
     "description": "自定义会计分录"
+  },
+
+  "def tcolorbox column 1": {
+    "prefix": "mybox1",
+    "body": [
+      "\\xmybox[green]{${1:text}}"
+    ],
+    "description": "自定义box文本框"
+  },
+
+  "def tcolorbox colum 2": {
+    "prefix": "mybox2",
+    "body": [
+      "\\begin{mybox2}{${1:titleName}}",
+      "${2:text}",
+      "\\end{mybox2}"
+    ],
+    "description": "自定义两列box文本框"
+  },
+
+  "def lipsum": {
+    "prefix": "mylib",
+    "body": [
+      "\\lipsum[1-2]"
+    ],
+    "description": "自定义lipsum"
+  },
+
+  "def enumrate": {
+    "prefix": "myenum",
+    "body": [
+      "\\begin{enumerate}",
+      "\\item ${1:One}",
+      "\\item ${2:Two}",
+      "\\item ${3:Three}",
+      "\\end{enumerate}"
+    ],
+    "description": "自定义enumerate环境"
   }
 }
