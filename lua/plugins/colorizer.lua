@@ -1,15 +1,17 @@
-require 'colorizer'.setup({
+require("colorizer").setup {
   filetypes = {
-    'html',
-    'css',
-    'javascript',
-    'typescript',
-    'typescriptreact',
-    'javascriptreact',
-    'lua'
+    "html",
+    "css",
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "lua",
+    "markdown",
+    "tex",
   },
   user_default_options = {
     mode = "background",
     tailwind = false, -- Enable tailwind colors
-  }
-})
+  },
+}

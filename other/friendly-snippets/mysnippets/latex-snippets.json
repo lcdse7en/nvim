@@ -282,7 +282,7 @@
     "body": [
       "\\definecolor{${2:defcolornewname}}{HTML}{${1:FF94CC}}"
     ],
-    "description": "自定义以RGB为格式的颜色"
+    "description": "自定义以HTML为格式的颜色"
   },
 
   "def fenlu": {
