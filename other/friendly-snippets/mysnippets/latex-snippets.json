@@ -289,10 +289,10 @@
     "prefix": "myfl",
     "body": [
       "\\begin{alignat*}{2}",
-      "\t借：& ${1:原材料}  \\quad    & ${2:dorpreNumber}. & ${3:dotbackNumber}\\\\\\",
-      "      & ${5:固定资产}\\quad    &     .& \\\\\\",
-      "\t贷：& ${4:银行存款}\\quad    &     .& \\\\\\",
-      "      & ${6:累积折旧}\\quad    &     .& \\\\\\",
+      "\t\\mbox{借：}& \\mbox{${1:原材料}}  \\quad    & ${2:dorpreNumber}. & ${3:dotbackNumber}\\\\\\",
+      "      & \\mbox{${5:固定资产}}\\quad    &     .& \\\\\\",
+      "\t\\mbox{贷：}& \\mbox{${4:银行存款}}\\quad    &     .& \\\\\\",
+      "      & \\mbox{${6:累积折旧}}\\quad    &     .& \\\\\\",
       "\\end{alignat*}"
     ],
     "description": "自定义会计分录"
@@ -309,7 +309,7 @@
   "def tcolorbox colum 2": {
     "prefix": "mybox2",
     "body": [
-      "\\begin{mybox2}{${1:titleName}}",
+      "\\begin{mybox2}{${1:titleName}}{${2:GroupA}}",
       "${2:text}",
       "\\end{mybox2}"
     ],
@@ -334,5 +334,15 @@
       "\\end{enumerate}"
     ],
     "description": "自定义enumerate环境"
+  },
+  
+  "def tikz envirements": {
+    "prefix": "mytikz",
+    "body": [
+      "\\begin{tikzpicture}",
+      "\t${1:draw}",
+      "\\end{tikzpicture}"
+    ],
+    "description": "自定义tikz环境"
   }
 }
