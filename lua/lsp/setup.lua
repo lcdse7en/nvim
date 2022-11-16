@@ -31,7 +31,9 @@ mason_lsp.setup {
     "volar",
     "prismals",
     "pyright",
-    "ltex",
+    -- "ltex",
+    "texlab",
+    "marksman",
   },
 
   -- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
@@ -133,14 +135,26 @@ lspconfig.pyright.setup {
   init_options = require("lsp.servers.pyright").init_options,
   on_attach = on_attach,
 }
-lspconfig.ltex.setup {
-  filetypes = require("lsp.servers.ltex").filetypes,
+lspconfig.texlab.setup {
+  filetypes = require("lsp.servers.texlab").filetypes,
   handlers = handlers,
-  init_options = require("lsp.servers.ltex").init_options,
+  init_options = require("lsp.servers.texlab").init_options,
   on_attach = on_attach,
 }
 
-for _, server in ipairs { "bashls", "emmet_ls", "graphql", "html", "volar", "prismals" } do
+for _, server in ipairs {
+  "bashls",
+  "emmet_ls",
+  "graphql",
+  "html",
+  "volar",
+  "prismals",
+  "pyright",
+  "sumneko_lua",
+  "texlab",
+  "marksman",
+  "jsonls",
+} do
   lspconfig[server].setup {
     on_attach = on_attach,
     capabilities = capabilities,

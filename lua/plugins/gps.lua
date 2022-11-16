@@ -6,7 +6,7 @@ end
 local icons = require "icons"
 local hl_group = "LineNr"
 
-gps.setup({
+gps.setup {
   icons = {
     ["class-name"] = "%#CmpItemKindClass#" .. icons.class .. "%*" .. "", -- Classes and class-like objects
     ["hook-name"] = "%#CmpItemKindMethodDefault#" .. icons.hook .. "%*" .. "", -- React Hooks
@@ -38,7 +38,7 @@ gps.setup({
     ["html"] = false,
     ["tsx"] = {
       ["hook-name"] = "%#CmpItemKindMethodDefault#" .. icons.hook .. "%*" .. "", -- React Hooks
-    }
+    },
   },
 
   separator = " " .. "%#" .. hl_group .. "#" .. EcoVim.icons.caretRight .. "%*",
@@ -51,5 +51,6 @@ gps.setup({
 
   -- indicator used when context is hits depth limit
   depth_limit_indicator = "..",
-  text_hl = hl_group
-})
+
+  text_hl = hl_group,
+}

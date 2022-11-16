@@ -245,6 +245,8 @@ return require("packer").startup {
         require("auto-im").setup()
       end,
     }
+    use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
+    use { "glepnir/lspsaga.nvim" }
     -------------------------------------
 
     if packer_bootstrap then

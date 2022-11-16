@@ -37,9 +37,9 @@ formatter.setup {
         }
       end,
     },
-    python = {
+    --[[ python = {
       -- Configuration for psf/black
-      --[[ function()
+      function()
         return {
           -- exe = "python3 -m autopep8", -- this should be available on your $PATH
           exe = "autopep8", -- this should be available on your $PATH
@@ -49,8 +49,8 @@ formatter.setup {
           },
           stdin = true,
         }
-      end, ]]
-    },
+      end,
+    }, ]]
     go = {
       function()
         return {
