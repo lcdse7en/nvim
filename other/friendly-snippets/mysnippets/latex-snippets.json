@@ -23,9 +23,7 @@
 
   "Custom subsection": {
     "prefix": "mysubs",
-    "body": [
-      "\\subsection{${1:Subsection Name}}"
-    ],
+    "body": ["\\subsection{${1:Subsection Name}}"],
     "description": "自定义字节标题"
   },
 
@@ -271,17 +269,13 @@
 
   "def xcolor RGB": {
     "prefix": "defcr",
-    "body": [
-      "\\definecolor{${2:defcolornewname}}{RGB}{${1:255,148,204}}"
-    ],
+    "body": ["\\definecolor{${2:defcolornewname}}{RGB}{${1:255,148,204}}"],
     "description": "自定义以RGB为格式的颜色"
   },
 
   "def xcolor HTML": {
     "prefix": "defch",
-    "body": [
-      "\\definecolor{${2:defcolornewname}}{HTML}{${1:FF94CC}}"
-    ],
+    "body": ["\\definecolor{${2:defcolornewname}}{HTML}{${1:FF94CC}}"],
     "description": "自定义以HTML为格式的颜色"
   },
 
@@ -290,9 +284,9 @@
     "body": [
       "\\begin{alignat*}{2}",
       "\t\\mbox{借：}& \\mbox{${1:原材料}}  \\quad    & ${2:dorpreNumber}. & ${3:dotbackNumber}\\\\\\",
-      "      & \\mbox{${5:固定资产}}\\quad    &     .& \\\\\\",
-      "\t\\mbox{贷：}& \\mbox{${4:银行存款}}\\quad    &     .& \\\\\\",
-      "      & \\mbox{${6:累积折旧}}\\quad    &     .& \\\\\\",
+      "      & \\mbox{${7:固定资产}}\\quad    &     .& \\\\\\",
+      "\t\\mbox{贷：}& \\mbox{${4:银行存款}}\\quad    &     ${5:preNumber}.&${6:backNumber} \\\\\\",
+      "      & \\mbox{${8:累积折旧}}\\quad    &     .& \\\\\\",
       "\\end{alignat*}"
     ],
     "description": "自定义会计分录"
@@ -300,9 +294,7 @@
 
   "def tcolorbox column 1": {
     "prefix": "mybox1",
-    "body": [
-      "\\xmybox[green]{${1:text}}"
-    ],
+    "body": ["\\xmybox[green]{${1:text}}"],
     "description": "自定义box文本框"
   },
 
@@ -318,9 +310,7 @@
 
   "def lipsum": {
     "prefix": "mylib",
-    "body": [
-      "\\lipsum[1-2]"
-    ],
+    "body": ["\\lipsum[1-2]"],
     "description": "自定义lipsum"
   },
 
@@ -335,14 +325,10 @@
     ],
     "description": "自定义enumerate环境"
   },
-  
+
   "def tikz envirements": {
     "prefix": "mytikz",
-    "body": [
-      "\\begin{tikzpicture}",
-      "\t${1:draw}",
-      "\\end{tikzpicture}"
-    ],
+    "body": ["\\begin{tikzpicture}", "\t${1:draw}", "\\end{tikzpicture}"],
     "description": "自定义tikz环境"
   }
 }
