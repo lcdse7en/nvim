@@ -328,7 +328,21 @@
 
   "def tikz envirements": {
     "prefix": "mytikz",
-    "body": ["\\begin{tikzpicture}", "\t${1:draw}", "\\end{tikzpicture}"],
+    "body": [
+      "\\begin{tikzpicture}[scale=1.2,>=triangle 45]",
+      "\t\\tkzInit[xmax=6,ymax=4]\\tkzGrid[sub]",
+      "\t\\tkzDefPoints[color=black]{${1:0/0/A}}",
+      "\t%\\tkzDrawPoints(a,b,c)",
+      "\t%\\tkzDrawSegments[very thick](a,c a,g)",
+      "\t%\\tkzText(1,1){text}",
+      "\\end{tikzpicture}"
+    ],
     "description": "自定义tikz环境"
+  },
+
+  "Custum equation": {
+    "prefix": "myqua",
+    "body": ["\\begin{equation}", "\t${1:Equation}", "\\end{equation}"],
+    "description": "自定义公式环境"
   }
 }
