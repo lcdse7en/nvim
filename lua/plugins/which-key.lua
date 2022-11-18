@@ -231,7 +231,12 @@ local normal_mode_mappings = {
     name = "Files",
     c = { "<cmd>Telescope colorscheme<CR>", "color schemes" },
     f = { '<cmd>lua require("plugins.telescope").edit_neovim()<CR>', "dotfiles" },
-    g = { "<cmd>lua require('plugins.telescope').live_grep()<cr>", "Find Text" },
+    -- g = { "<cmd>lua require('plugins.telescope').live_grep()<cr>", "Find Text" },
+    g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Live_Grep" },
+    G = {
+      "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args(require('telescope.themes').get_ivy())<cr>",
+      "Live_Grep_args",
+    },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     -- p = { "<cmd>NvimTreeToggle<cr>", "Toggle Filetree" },
     b = { "<cmd>BrowseBookmarks<cr>", "BrowseBookmarks" },

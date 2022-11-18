@@ -6,6 +6,7 @@ local icons = EcoVim.icons
 require("telescope").load_extension "fzf"
 require("telescope").load_extension "repo"
 require("telescope").load_extension "git_worktree"
+require("telescope").load_extension "vim_bookmarks"
 
 local git_icons = {
   added = icons.gitAdd,
@@ -51,6 +52,8 @@ require("telescope").setup {
     mappings = {
       i = {
         ["<C-x>"] = false,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,

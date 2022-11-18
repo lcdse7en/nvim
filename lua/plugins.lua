@@ -47,6 +47,9 @@ return require("packer").startup {
       },
     }
     use { "cljoly/telescope-repo.nvim" }
+    use { "nvim-telescope/telescope-live-grep-raw.nvim" }
+    use { "MattesGroeger/vim-bookmarks" }
+    use { "tom-anders/telescope-vim-bookmarks.nvim" }
     use { "kevinhwang91/nvim-bqf", ft = "qf" }
     use { "nvim-pack/nvim-spectre" }
     use { "kyazdani42/nvim-tree.lua", config = "require('plugins.tree')" }
@@ -123,14 +126,13 @@ return require("packer").startup {
     use { "nacro90/numb.nvim", config = "require('plugins.numb')" }
     use { "folke/todo-comments.nvim", config = "require('plugins.todo-comments')" }
     use { "folke/zen-mode.nvim", config = "require('plugins.zen')", disable = not EcoVim.plugins.zen.enabled }
-    --[[ use {
+    use {
       "folke/twilight.nvim",
       config = function()
         require("twilight").setup {}
       end,
       disable = not EcoVim.plugins.zen.enabled,
-    } ]]
-    use { "ggandor/lightspeed.nvim", config = "require('plugins.lightspeed')" }
+    }
     use { "folke/which-key.nvim", config = "require('plugins.which-key')", event = "BufWinEnter" }
     use { "ecosse3/galaxyline.nvim", after = "nvim-gps", config = "require('plugins.galaxyline')", event = "BufWinEnter" }
     use {
@@ -248,7 +250,7 @@ return require("packer").startup {
     use { "ggandor/leap.nvim", config = "require('plugins.leap')" }
     use { "ggandor/flit.nvim" }
     use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
-    use { "glepnir/lspsaga.nvim" }
+    -- use { "tami5/lspsaga.nvim", branch = "nvim6.0" or "nvim51", config = "require('plugins.lspsaga')" }
     -------------------------------------
 
     if packer_bootstrap then
