@@ -44,3 +44,15 @@ vim.cmd [[
     autocmd InsertLeave * :silent let fcitx5state=system("fcitx5-remote")[0] | silent !fcitx5-remote -c
     autocmd InsertEnter * :silent if fcitx5state == 2 | call system("fcitx5-remote -o") | endif
 ]]
+
+vim.cmd [[
+autocmd ColorScheme * lua require('leap').init_highlight(true)
+]]
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "LeapMatch", { ctermfg = "#99ddff" })
+    vim.api.nvim_set_hl(0, "LeapLabelPrimary", { ctermfg = "#99ddff" })
+    vim.api.nvim_set_hl(0, "LeapLabelSecondary", { ctermfg = "#99ddff" })
+  end,
+})
