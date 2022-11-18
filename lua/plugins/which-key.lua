@@ -234,7 +234,7 @@ local normal_mode_mappings = {
     -- g = { "<cmd>lua require('plugins.telescope').live_grep()<cr>", "Find Text" },
     g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Live_Grep" },
     G = {
-      "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args(require('telescope.themes').get_ivy())<cr>",
+      "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
       "Live_Grep_args",
     },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
