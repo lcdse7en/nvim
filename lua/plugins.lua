@@ -250,7 +250,7 @@ return require("packer").startup {
     use { "ggandor/leap.nvim", config = "require('plugins.leap')" }
     use { "ggandor/flit.nvim" }
     use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
-    -- use { "tami5/lspsaga.nvim", branch = "nvim6.0" or "nvim51", config = "require('plugins.lspsaga')" }
+    use { "glepnir/lspsaga", branch = "main", config = "require('plugins.lspsaga')" }
     -------------------------------------
 
     if packer_bootstrap then

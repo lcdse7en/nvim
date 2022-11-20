@@ -145,6 +145,11 @@ keymap("i", "jj", "<ESC>", silent)
 keymap("n", "Q", ":wq<cr>", silent)
 keymap("n", "W", ":w<cr>", silent)
 
+keymap("n", "<leader>to", ":tabnew<cr>", silent)
+keymap("n", "<leader>tx", ":tabclose<cr>", silent)
+keymap("n", "<leader>tn", ":tabn<cr>", silent)
+keymap("n", "<leader>tp", ":tabp<cr>", silent)
+
 -- Markdown Preview
 keymap("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", silent)
 
