@@ -145,6 +145,13 @@ keymap("i", "jj", "<ESC>", silent)
 keymap("n", "Q", ":wq<cr>", silent)
 keymap("n", "W", ":w<cr>", silent)
 
+keymap("n", "<leader>nh", ":nohl<cr>", silent)
+
+keymap("n", "<leader>sv", "<C-w>v", silent)
+keymap("n", "<leader>sh", "<C-w>s", silent)
+keymap("n", "<leader>se", "<C-w>=", silent)
+keymap("n", "<leader>sx", ":close<cr>", silent)
+
 keymap("n", "<leader>to", ":tabnew<cr>", silent)
 keymap("n", "<leader>tx", ":tabclose<cr>", silent)
 keymap("n", "<leader>tn", ":tabn<cr>", silent)

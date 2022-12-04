@@ -110,8 +110,8 @@ return require("packer").startup {
     -- General
     use { "AndrewRadev/switch.vim" }
     use { "AndrewRadev/splitjoin.vim" }
-    --use { 'numToStr/Comment.nvim', config = "require('plugins.comment')" }
-    use { "LudoPinelli/comment-box.nvim" }
+    use { "numToStr/Comment.nvim", config = "require('plugins.comment')" }
+    --use { "LudoPinelli/comment-box.nvim" }
     use { "akinsho/nvim-toggleterm.lua", branch = "main", config = "require('plugins.toggleterm')" }
     use { "tpope/vim-repeat" }
     use { "tpope/vim-speeddating" }
@@ -234,7 +234,7 @@ return require("packer").startup {
     use { "voldikss/vim-translator", config = "require('plugins.translator')" }
     use { "edluffy/specs.nvim", config = "require('plugins.specs')" }
     use { "windwp/nvim-ts-autotag" }
-    use { "b3nj5m1n/kommentary", config = "require('plugins.kommentary')" }
+    --use { "b3nj5m1n/kommentary", config = "require('plugins.kommentary')" }
     use { "hrsh7th/cmp-vsnip" }
     use { "hrsh7th/vim-vsnip" }
     use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
@@ -253,6 +253,9 @@ return require("packer").startup {
     use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
     use { "jayp0521/mason-null-ls.nvim" }
     use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
+    use { "inkarkat/vim-ReplaceWithRegister" }
+    use { "christoomey/vim-tmux-navigator" }
+
     -------------------------------------
 
     if packer_bootstrap then

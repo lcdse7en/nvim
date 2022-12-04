@@ -17,10 +17,6 @@ null_ls.setup {
     formatting.stylua,
     formatting.autopep8,
     formatting.beautysh,
-    formatting.lua_format.with {
-      filetypes = { "lua" },
-      extra_args = { "-i" },
-    },
     formatting.markdownlint.with {
       filetypes = { "markdown" },
       extra_args = { "--fix", "$FILENAME" },
