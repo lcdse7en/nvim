@@ -255,6 +255,7 @@ return require("packer").startup {
     use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
     use { "inkarkat/vim-ReplaceWithRegister" }
     use { "christoomey/vim-tmux-navigator" }
+    use { "szw/vim-maximizer" }
 
     -------------------------------------
 

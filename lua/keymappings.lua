@@ -152,6 +152,8 @@ keymap("n", "<leader>sh", "<C-w>s", silent)
 keymap("n", "<leader>se", "<C-w>=", silent)
 keymap("n", "<leader>sx", ":close<cr>", silent)
 
+keymap("n", "<leader>sm", ":MaximizerToggle<cr>", silent)
+
 keymap("n", "<leader>to", ":tabnew<cr>", silent)
 keymap("n", "<leader>tx", ":tabclose<cr>", silent)
 keymap("n", "<leader>tn", ":tabn<cr>", silent)
