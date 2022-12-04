@@ -110,7 +110,8 @@ return require("packer").startup {
     -- General
     use { "AndrewRadev/switch.vim" }
     use { "AndrewRadev/splitjoin.vim" }
-    use { "numToStr/Comment.nvim", cmd = "CB*", config = "require('plugins.comment')" }
+    --use { "numToStr/Comment.nvim", tag = "v0.7.0", config = "require('plugins.comment')" }
+    use { "b3nj5m1n/kommentary", config = "require('plugins.kommentary')" }
     use { "LudoPinelli/comment-box.nvim", config = "require('plugins.comment-box')" }
     use { "akinsho/nvim-toggleterm.lua", branch = "main", config = "require('plugins.toggleterm')" }
     use { "tpope/vim-repeat" }
@@ -239,7 +240,6 @@ return require("packer").startup {
     use { "voldikss/vim-translator", config = "require('plugins.translator')" }
     use { "edluffy/specs.nvim", config = "require('plugins.specs')" }
     use { "windwp/nvim-ts-autotag" }
-    --use { "b3nj5m1n/kommentary", config = "require('plugins.kommentary')" }
     use { "hrsh7th/cmp-vsnip" }
     use { "hrsh7th/vim-vsnip" }
     use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
