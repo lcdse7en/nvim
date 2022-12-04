@@ -111,7 +111,7 @@ return require("packer").startup {
     use { "AndrewRadev/switch.vim" }
     use { "AndrewRadev/splitjoin.vim" }
     use { "numToStr/Comment.nvim", config = "require('plugins.comment')" }
-    --use { "LudoPinelli/comment-box.nvim" }
+    use { "LudoPinelli/comment-box.nvim" }
     use { "akinsho/nvim-toggleterm.lua", branch = "main", config = "require('plugins.toggleterm')" }
     use { "tpope/vim-repeat" }
     use { "tpope/vim-speeddating" }
@@ -159,12 +159,16 @@ return require("packer").startup {
       end,
     }
     use { "Shatur/neovim-session-manager", config = "require('plugins.session-manager')" }
-    --[[ use {
+
+    -- surround
+    use { -- ysiw ds" cs'" ys$"
       "kylechui/nvim-surround",
+      tag = "*",
       config = function()
         require("nvim-surround").setup {}
       end,
-    } ]]
+    }
+
     use {
       "sunjon/shade.nvim",
       config = function()
@@ -172,6 +176,7 @@ return require("packer").startup {
         require("shade").toggle()
       end,
     }
+
     use { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async", config = "require('plugins.nvim-ufo')" }
     use {
       "echasnovski/mini.nvim",
@@ -219,7 +224,7 @@ return require("packer").startup {
     --------------------------------------
     --               se7en Add
     --------------------------------------
-    use { "tpope/vim-surround" }
+    --use { "tpope/vim-surround" }
     use { "Pocco81/AutoSave.nvim", config = "require('plugins.autosave')" }
     use { "gcmt/wildfire.vim" }
     use { "junegunn/fzf.vim" }
@@ -256,6 +261,13 @@ return require("packer").startup {
     use { "inkarkat/vim-ReplaceWithRegister" }
     use { "christoomey/vim-tmux-navigator" }
     use { "szw/vim-maximizer" }
+    use {
+      "kevinhwang91/nvim-hlslens",
+      setup = function()
+        require("hlslens").setup()
+      end,
+      config = "require('plugins.hlslens')",
+    }
 
     -------------------------------------
 
