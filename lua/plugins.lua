@@ -159,12 +159,12 @@ return require("packer").startup {
       end,
     }
     use { "Shatur/neovim-session-manager", config = "require('plugins.session-manager')" }
-    use {
+    --[[ use {
       "kylechui/nvim-surround",
       config = function()
         require("nvim-surround").setup {}
       end,
-    }
+    } ]]
     use {
       "sunjon/shade.nvim",
       config = function()
@@ -219,6 +219,7 @@ return require("packer").startup {
     --------------------------------------
     --               se7en Add
     --------------------------------------
+    use { "tpope/vim-surround" }
     use { "Pocco81/AutoSave.nvim", config = "require('plugins.autosave')" }
     use { "gcmt/wildfire.vim" }
     use { "junegunn/fzf.vim" }
@@ -239,7 +240,7 @@ return require("packer").startup {
     use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
     -- Format
     use { "mhartington/formatter.nvim", config = "require('plugins.format')" }
-    -- fcitx5 智能输入法切换
+    -- fcitx5
     use {
       "sei40kr/auto-im.nvim",
       event = { "InsertEnter *", "CmdlineEnter *" },
@@ -250,7 +251,8 @@ return require("packer").startup {
     use { "ggandor/leap.nvim", config = "require('plugins.leap')" }
     use { "ggandor/flit.nvim" }
     use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
-    use { "glepnir/lspsaga", branch = "main", config = "require('plugins.lspsaga')" }
+    use { "jayp0521/mason-null-ls.nvim" }
+    use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
     -------------------------------------
 
     if packer_bootstrap then

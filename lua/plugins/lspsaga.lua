@@ -1,10 +1,9 @@
-local saga_status, saga = pcall(require, "lspsaga")
+local saga_status, saga = pcall("lspsaga", require)
 if not saga_status then
- return
+  return
 end
 
-
-saga.init_lsp_saga({
+saga.init_lsp_saga {
   move_in_saga = { prev = "<C-k>", next = "C-j" },
   finder_action_keys = {
     open = "<CR>",
@@ -12,4 +11,4 @@ saga.init_lsp_saga({
   definition_action_keys = {
     edit = "<CR>",
   },
-})
+}

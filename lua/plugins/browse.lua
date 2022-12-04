@@ -20,6 +20,7 @@ local bookmarks = {
   "https://torrentgalaxy.to/",
   "https://github.com/Allaman/nvim",
   "https://github.com/christianchiarulli",
+  "https://www.91kanju.com/vod-play/541-2-1.html",
   --"https://github.com/theniceboy",
   --"https://github.com/andreqls",
   --"https://aur.archlinux.org/packages/",

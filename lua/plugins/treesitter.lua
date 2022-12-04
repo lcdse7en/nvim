@@ -1,5 +1,22 @@
 require("nvim-treesitter.configs").setup {
-  ensure_installed = { "json", "html", "scss", "lua", "python", "latex", "tsx", "markdown" }, -- one of "all", or a list of languages
+  ensure_installed = {
+    "json",
+    "html",
+    "scss",
+    "lua",
+    "python",
+    "latex",
+    "tsx",
+    "markdown",
+    "typescript",
+    "javascript",
+    "bash",
+    "vim",
+    "gitignore",
+    "svelte",
+    "dockerfile",
+    "graphql",
+  }, -- one of "all", or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "haskell" }, -- list of parsers to ignore installing
   highlight = {
@@ -21,6 +38,12 @@ require("nvim-treesitter.configs").setup {
   indent = {
     enable = true,
   },
+
+  autotag = {
+    enable = true,
+  },
+
+  auto_install = true,
 
   rainbow = {
     enable = true,

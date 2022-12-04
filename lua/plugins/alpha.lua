@@ -3,11 +3,11 @@ if not present then
   return
 end
 
-local dashboard = require("alpha.themes.dashboard")
-local icons = require("icons")
+local dashboard = require "alpha.themes.dashboard"
+local icons = require "icons"
 local if_nil = vim.F.if_nil
 local fn = vim.fn
-local config_dir = fn.stdpath('config')
+local config_dir = fn.stdpath "config"
 
 -- ╭──────────────────────────────────────────────────────────╮
 -- │ Header                                                   │
@@ -24,8 +24,8 @@ local header = {
   "░░░░░░░░  ░░░░░   ░░░░░░     ░░    ░░ ░░░  ░░  ░░ ",
 }
 
-dashboard.section.header.type = "text";
-dashboard.section.header.val = header;
+dashboard.section.header.type = "text"
+dashboard.section.header.val = header
 dashboard.section.header.opts = {
   position = "center",
   hl = "EcovimHeader",
@@ -35,20 +35,22 @@ dashboard.section.header.opts = {
 -- │ Heading Info                                             │
 -- ╰──────────────────────────────────────────────────────────╯
 
-local thingy = io.popen('echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"')
-if thingy == nil then return end
-local date = thingy:read("*a")
+local thingy = io.popen 'echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"'
+if thingy == nil then
+  return
+end
+local date = thingy:read "*a"
 thingy:close()
 
 local datetime = os.date " %H:%M"
 
 local hi_top_section = {
   type = "text",
-  val =  "┌────────────   Today is " .. date .. " ────────────┐",
+  val = "┌────────────   Today is " .. date .. " ────────────┐",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
-  }
+    hl = "EcovimHeaderInfo",
+  },
 }
 
 local hi_middle_section = {
@@ -56,17 +58,19 @@ local hi_middle_section = {
   val = "│                                                │",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
-  }
+    hl = "EcovimHeaderInfo",
+  },
 }
 
 local hi_bottom_section = {
   type = "text",
-  val = "└───══───══───══───  " .. datetime .. "  ───══───══───══────┘",
+  val = "└───══───══───══───  "
+    .. datetime
+    .. "  ───══───══───══────┘",
   opts = {
     position = "center",
-    hl = "EcovimHeaderInfo"
-  }
+    hl = "EcovimHeaderInfo",
+  },
 }
 
 -- ╭──────────────────────────────────────────────────────────╮
@@ -81,40 +85,50 @@ local leader = "SPC"
 --- @param keybind string optional
 --- @param keybind_opts table optional
 local function button(sc, txt, keybind, keybind_opts)
-    local sc_ = sc:gsub("%s", ""):gsub(leader, "<leader>")
+  local sc_ = sc:gsub("%s", ""):gsub(leader, "<leader>")
 
-    local opts = {
-        position = "center",
-        shortcut = sc,
-        cursor = 5,
-        width = 50,
-        align_shortcut = "right",
-        hl_shortcut = "EcovimPrimary",
-    }
-    if keybind then
-        keybind_opts = if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
-        opts.keymap = { "n", sc_, keybind, keybind_opts }
-    end
+  local opts = {
+    position = "center",
+    shortcut = sc,
+    cursor = 5,
+    width = 50,
+    align_shortcut = "right",
+    hl_shortcut = "EcovimPrimary",
+  }
+  if keybind then
+    keybind_opts = if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
+    opts.keymap = { "n", sc_, keybind, keybind_opts }
+  end
 
-    local function on_press()
-        -- local key = vim.api.nvim_replace_termcodes(keybind .. "<Ignore>", true, false, true)
-        local key = vim.api.nvim_replace_termcodes(sc_ .. "<Ignore>", true, false, true)
-        vim.api.nvim_feedkeys(key, "t", false)
-    end
+  local function on_press()
+    -- local key = vim.api.nvim_replace_termcodes(keybind .. "<Ignore>", true, false, true)
+    local key = vim.api.nvim_replace_termcodes(sc_ .. "<Ignore>", true, false, true)
+    vim.api.nvim_feedkeys(key, "t", false)
+  end
 
-    return {
-        type = "button",
-        val = txt,
-        on_press = on_press,
-        opts = opts,
-    }
+  return {
+    type = "button",
+    val = txt,
+    on_press = on_press,
+    opts = opts,
+  }
 end
 
 dashboard.section.buttons.val = {
-  button("<C-P>", icons.fileNoBg .. " " .. "Find File", "<cmd>lua require('plugins.telescope').project_files()<CR>", {}),
+  button(
+    "<C-P>",
+    icons.fileNoBg .. " " .. "Find File",
+    "<cmd>lua require('plugins.telescope').project_files()<CR>",
+    {}
+  ),
   button("<S-P>", icons.t .. " " .. "Find Word", "<cmd>lua require('plugins.telescope.pickers.multi-rg')()<CR>", {}),
   button("SPC s h", icons.fileRecent .. " " .. "Recents", "<cmd>Telescope oldfiles hidden=true<CR>", {}),
-  button("SPC / s d", icons.timer .. " " .. "Load Current Dir Session", "<cmd>SessionManager load_current_dir_session<CR>", {}),
+  button(
+    "SPC / s d",
+    icons.timer .. " " .. "Load Current Dir Session",
+    "<cmd>SessionManager load_current_dir_session<CR>",
+    {}
+  ),
   button("SPC / u", icons.container .. " " .. "Update Plugins", "<cmd>PackerSync<CR>", {}),
   button("SPC / i", icons.container .. " " .. "Install Plugins", "<cmd>PackerInstall<CR>", {}),
   button("SPC / c", icons.cog .. " " .. "Settings", "<cmd>e $MYVIMRC<CR>", {}),
@@ -127,12 +141,16 @@ dashboard.section.buttons.val = {
 
 local function file_exists(file)
   local f = io.open(file, "rb")
-  if f then f:close() end
+  if f then
+    f:close()
+  end
   return f ~= nil
 end
 
 local function line_from(file)
-  if not file_exists(file) then return {} end
+  if not file_exists(file) then
+    return {}
+  end
   local lines = {}
   for line in io.lines(file) do
     lines[#lines + 1] = line
@@ -148,7 +166,7 @@ local function footer()
 end
 
 dashboard.section.footer.val = {
-  footer()
+  footer(),
 }
 dashboard.section.footer.opts = {
   position = "center",
@@ -170,19 +188,19 @@ local section = {
 
 local opts = {
   layout = {
-    {type = "padding", val = 5},
+    { type = "padding", val = 5 },
     section.header,
-    {type = "padding", val = 1},
+    { type = "padding", val = 1 },
     section.hi_top_section,
     section.hi_middle_section,
     section.hi_bottom_section,
-    {type = "padding", val = 2},
+    { type = "padding", val = 2 },
     section.buttons,
-    {type = "padding", val = 5},
+    { type = "padding", val = 5 },
     section.footer,
   },
   opts = {
-    margin = 5
+    margin = 5,
   },
 }
 

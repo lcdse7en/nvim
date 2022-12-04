@@ -8,6 +8,11 @@ if not mason_ok or not mason_lsp_ok then
   return
 end
 
+local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
+if not mason_null_ls_status then
+  return
+end
+
 mason.setup {
   ui = {
     -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
@@ -46,6 +51,19 @@ mason_lsp.setup {
   automatic_installation = true,
 }
 
+mason_null_ls.setup {
+  ensure_installed = {
+    "prettier",
+    "stylua",
+    "eslint_d",
+    "luaformatter",
+    "autopep8",
+    "beautysh",
+    "markdownlint",
+    "prettierd",
+  },
+}
+
 local lspconfig = require "lspconfig"
 
 local handlers = {
@@ -57,8 +75,26 @@ local handlers = {
   ),
 }
 
+local keymap = vim.keymap
 local function on_attach(client, bufnr)
   -- set up buffer keymaps, etc.
+  local opts = { noremap = true, silent = true, buffer = bufnr }
+
+  -- set keybinds
+  keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<cr>", opts)
+  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<cr>", opts)
+  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<cr>", opts)
+  keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+  keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+  keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", opts)
+  keymap.set("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
+  keymap.set("n", "<leader>dl", "<cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
+  keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<cr>", opts)
+  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
+
+  if client.name == "tsserver" then
+    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<cr>")
+  end
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -119,7 +155,20 @@ lspconfig.sumneko_lua.setup {
   capabilities = capabilities,
   handlers = handlers,
   on_attach = on_attach,
-  settings = require("lsp.servers.sumneko_lua").settings,
+  -- settings = require("lsp.servers.sumneko_lua").settings,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+          [vim.fn.stdpath "config" .. "/lua"] = true,
+        },
+      },
+    },
+  },
 }
 
 lspconfig.vuels.setup {
