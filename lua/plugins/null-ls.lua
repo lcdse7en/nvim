@@ -25,14 +25,6 @@ null_ls.setup {
       filetypes = { "markdown" },
       extra_args = { "--fix", "$FILENAME" },
     },
-    formatting.markdown_toc.with {
-      filetypes = { "markdown" },
-      extra_args = { "-i", "$FILENAME" },
-    },
-    formatting.mdformat.with {
-      filetypes = { "markdown" },
-      extra_args = { "$FILENAME" },
-    },
     formatting.prettierd,
    -- diagnostics.eslint_d,
     diagnostics.eslint_d.with { -- js/ts linter
@@ -41,7 +33,6 @@ null_ls.setup {
         return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
       end,
     },
-  },
     -- Formatting ---------------------
     -- latex
     -- formatting.latexindent,
