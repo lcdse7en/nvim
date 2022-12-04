@@ -185,9 +185,9 @@ lspconfig.pyright.setup {
   on_attach = on_attach,
 }
 lspconfig.texlab.setup {
-  filetypes = require("lsp.servers.texlab").filetypes,
+  filetypes = require("lsp.servers.tex").filetypes,
   handlers = handlers,
-  init_options = require("lsp.servers.texlab").init_options,
+  init_options = require("lsp.servers.tex").init_options,
   on_attach = on_attach,
 }
 
