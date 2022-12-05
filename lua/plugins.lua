@@ -243,8 +243,6 @@ return require("packer").startup {
     use { "hrsh7th/cmp-vsnip" }
     use { "hrsh7th/vim-vsnip" }
     use { "hrsh7th/cmp-emoji", config = "require('plugins.emoji')" }
-    -- Format
-    use { "mhartington/formatter.nvim", config = "require('plugins.format')" }
     -- fcitx5
     use {
       "sei40kr/auto-im.nvim",
