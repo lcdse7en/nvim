@@ -10,6 +10,36 @@ local code_actions = null_ls.builtins.code_actions
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+local no_really = {
+  method = null_ls.methods.DIAGNOSTICS,
+  filetypes = { "markdown", "text" },
+  generator = {
+    fn = function(params)
+      local diagnostics = {}
+      -- sources have access to a params object
+      -- containing info about the current file and editor state
+      for i, line in ipairs(params.content) do
+        local col, end_col = line:find "really"
+        if col and end_col then
+          -- null-ls fills in undefined positions
+          -- and converts source diagnostics into the required format
+          table.insert(diagnostics, {
+            row = i,
+            col = col,
+            end_col = end_col + 1,
+            source = "no-really",
+            message = "Don't use 'really!'",
+            severity = vim.diagnostic.severity.WARN,
+          })
+        end
+      end
+      return diagnostics
+    end,
+  },
+}
+
+null_ls.register(no_really)
+
 null_ls.setup {
   debug = false,
   sources = {
@@ -17,10 +47,10 @@ null_ls.setup {
     formatting.stylua,
     formatting.autopep8,
     formatting.beautysh,
-    formatting.markdownlint.with {
-      filetypes = { "markdown" },
+    --[[ formatting.markdownlint.with {
+      filetypes = { "markdown", "md" },
       extra_args = { "--fix", "$FILENAME" },
-    },
+    },]]
     formatting.prettierd,
     -- diagnostics.eslint_d,
     diagnostics.eslint_d.with { -- js/ts linter
@@ -44,8 +74,11 @@ null_ls.setup {
     },
     --  brew install shfmt
     formatting.shfmt,
-    -- StyLua
-    --frontend
+    -- pip install black
+    formatting.black.with {
+      filetypes = { "python" },
+      extra_args = { "--fast" },
+    },
     formatting.prettier.with { -- 比默认少了 markdown
       filetypes = {
         "javascript",
@@ -61,8 +94,9 @@ null_ls.setup {
         "yaml",
         "graphql",
         "latex",
-        "markdown",
+        -- "markdown",
         "latex",
+        "python",
       },
       prefer_local = "node_modules/.bin",
     },
@@ -70,9 +104,7 @@ null_ls.setup {
     -- rustup component add rustfmt
     formatting.rustfmt,
     -- Python
-    -- pip install black
     -- asdf reshim python
-    formatting.black.with { extra_args = { "--fast" } },
     -----------------------------------------------------
     -- Ruby
     -- gem install rubocop

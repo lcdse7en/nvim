@@ -261,9 +261,6 @@ return require("packer").startup {
     use { "szw/vim-maximizer" }
     use {
       "kevinhwang91/nvim-hlslens",
-      setup = function()
-        require("hlslens").setup()
-      end,
       config = "require('plugins.hlslens')",
     }
     use { "tweekmonster/startuptime.vim" }

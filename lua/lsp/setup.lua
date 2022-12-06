@@ -58,8 +58,9 @@ mason_null_ls.setup {
     "eslint_d",
     "luaformatter",
     "autopep8",
+    "black",
     "beautysh",
-    "markdownlint",
+    -- "markdownlint",
     "prettierd",
   },
 }

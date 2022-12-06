@@ -18,6 +18,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     inoremap <buffer> ,2 ##<Space><Enter><++><Esc>kA
     inoremap <buffer> ,3 ###<Space><Enter><++><Esc>kA
     inoremap <buffer> ,4 ####<Space><Enter><++><Esc>kA
+    inoremap <buffer> ,5 #####<Space><Enter><++><Esc>kA
     inoremap <buffer> ,l --------<Enter>
      ]]
   end,
