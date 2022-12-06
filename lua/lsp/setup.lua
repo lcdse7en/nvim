@@ -60,7 +60,7 @@ mason_null_ls.setup {
     "autopep8",
     "black",
     "beautysh",
-    -- "markdownlint",
+    "markdownlint",
     "prettierd",
   },
 }
