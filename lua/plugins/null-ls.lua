@@ -25,7 +25,7 @@ local markdownlint = {
     to_stdin = true,
     from_stderr = true,
     -- choose an output format (raw, json, or line)
-    format = "line", -- raw, json, line
+    format = "line",
     check_exit_code = function(code, stderr)
       local success = code <= 1
 
