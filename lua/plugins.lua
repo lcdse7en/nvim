@@ -252,7 +252,7 @@ return require("packer").startup {
       end,
     }
     use { "ggandor/leap.nvim", config = "require('plugins.leap')" }
-    use { "ggandor/flit.nvim" }
+    use { "ggandor/flit.nvim", config = "require('plugins.flit')" }
     use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
     use { "jayp0521/mason-null-ls.nvim" }
     use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
