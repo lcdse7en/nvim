@@ -257,8 +257,8 @@ return require("packer").startup {
         require("auto-im").setup()
       end,
     }
-    use { "ggandor/leap.nvim", config = "require('plugins.leap')" }
-    use { "ggandor/flit.nvim", config = "require('plugins.flit')" }
+    use { "ggandor/leap.nvim", config = "require('plugins.leap')" } -- NOTE: s S dx yx cx
+    use { "ggandor/flit.nvim", config = "require('plugins.flit')" } -- NOTE: f
     -- use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
     use { "jayp0521/mason-null-ls.nvim" }
     use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }

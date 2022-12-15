@@ -14,6 +14,3 @@ leap.setup {
 local function leap_current_window()
   leap.leap { target_windows = { vim.fn.win_getid() } }
 end
-
--- Map them to your preferred key, like:
-vim.keymap.set("n", "s", leap_current_window, { silent = true })
