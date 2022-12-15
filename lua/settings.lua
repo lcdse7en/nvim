@@ -32,7 +32,7 @@ local options = {
   updatetime = 100, --- Faster completion
   viminfo = "'1000", --- Increase the size of file history
   wildignore = "*node_modules/**", --- Don't search inside Node.js modules (works for gutentag)
-  wrap = false, --- Display long lines as just one line
+  wrap = true, --- Display long lines as just one line
   writebackup = false, --- Not needed
   -- Neovim defaults
   autoindent = true, --- Good auto indent
@@ -44,6 +44,8 @@ local options = {
   fileencoding = "utf-8", --- The encoding written to file
   incsearch = true, --- Start searching before pressing enter
   showmode = false, --- Don't show things like -- INSERT -- anymore
+  textwidth = 120,
+  cindent = true,
 }
 
 local globals = {

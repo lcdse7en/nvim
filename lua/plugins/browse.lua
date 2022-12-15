@@ -14,6 +14,7 @@ local bookmarks = {
   "https://texdoc.org/index.html",
   "https://m.weibo.cn/u/1965284462",
   "https://www.kpopn.com/category/news",
+  "https://github.com/ravenxrz/dotfiles/nvim",
   "https://github.com/ecosse3/nvim",
   "https://github.com/LukeSmithxyz/voidrice/tree/master/.config",
   "https://fontawesome.com/v5/search",

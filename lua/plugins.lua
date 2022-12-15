@@ -135,7 +135,12 @@ return require("packer").startup {
       disable = not EcoVim.plugins.zen.enabled,
     }
     use { "folke/which-key.nvim", config = "require('plugins.which-key')", event = "BufWinEnter" }
-    use { "ecosse3/galaxyline.nvim", after = "nvim-gps", config = "require('plugins.galaxyline')", event = "BufWinEnter" }
+    use {
+      "ecosse3/galaxyline.nvim",
+      after = "nvim-gps",
+      config = "require('plugins.galaxyline')",
+      event = "BufWinEnter",
+    }
     use {
       "romgrk/barbar.nvim",
       requires = { "kyazdani42/nvim-web-devicons" },
@@ -162,7 +167,8 @@ return require("packer").startup {
     use { "Shatur/neovim-session-manager", config = "require('plugins.session-manager')" }
 
     -- surround
-    use { -- ysiw ds" cs'" ys$"
+    use {
+      -- ysiw ds" cs'" ys$"
       "kylechui/nvim-surround",
       tag = "*",
       config = function()
@@ -253,7 +259,7 @@ return require("packer").startup {
     }
     use { "ggandor/leap.nvim", config = "require('plugins.leap')" }
     use { "ggandor/flit.nvim", config = "require('plugins.flit')" }
-    use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
+    -- use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
     use { "jayp0521/mason-null-ls.nvim" }
     use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
     use { "inkarkat/vim-ReplaceWithRegister" }
@@ -261,9 +267,16 @@ return require("packer").startup {
     use { "szw/vim-maximizer" }
     use {
       "kevinhwang91/nvim-hlslens",
+      branch = "main",
       config = "require('plugins.hlslens')",
     }
     use { "tweekmonster/startuptime.vim" }
+    -- Highlight URLs inside vim
+    use { "itchyny/vim-highlighturl", event = "VimEnter" }
+    -- Auto format tools
+    use { "mhartington/formatter.nvim", config = "require('plugins.formatter')" } -- <leader>lf
+    use { "Pocco81/HighStr.nvim" }
+    use { "mtdl9/vim-log-highlighting" }
 
     -------------------------------------
 

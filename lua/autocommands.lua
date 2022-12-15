@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "markdown" },
   callback = function()
-    vim.cmd [[ 
+    vim.cmd [[
     inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
     inoremap <buffer> <c-e> <Esc>/<++><CR>:nohlsearch<CR>"_c4l
     inoremap <buffer> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
@@ -53,3 +53,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "LeapLabelSecondary", { ctermfg = "#99ddff" })
   end,
 })
+
+vim.cmd [[
+    augroup _auto_format
+      autocmd!
+      autocmd BufWritePre * FormatWrite
+    augroup end
+
+]]

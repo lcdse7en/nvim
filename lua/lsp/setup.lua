@@ -8,10 +8,10 @@ if not mason_ok or not mason_lsp_ok then
   return
 end
 
-local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
+--[[ local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
 if not mason_null_ls_status then
   return
-end
+end ]]
 
 mason.setup {
   ui = {
@@ -51,7 +51,7 @@ mason_lsp.setup {
   automatic_installation = true,
 }
 
-mason_null_ls.setup {
+--[[ mason_null_ls.setup {
   ensure_installed = {
     "prettier",
     "stylua",
@@ -59,11 +59,12 @@ mason_null_ls.setup {
     "luaformatter",
     "autopep8",
     "black",
+    "shfmt",
     "beautysh",
     "markdownlint",
     "prettierd",
   },
-}
+} ]]
 
 local lspconfig = require "lspconfig"
 

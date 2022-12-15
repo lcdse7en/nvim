@@ -143,6 +143,7 @@ keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'round
 keymap("n", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", silent)
 keymap("v", "<leader>ac", "<cmd>lua require('comment-box').lbox()<CR>", silent)
 
+-- keymap("i", "jj", "<ESC>", silent)
 keymap("i", "jj", "<ESC>", silent)
 keymap("n", "Q", ":wq<cr>", silent)
 keymap("n", "W", ":w<cr>", silent)
