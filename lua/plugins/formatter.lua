@@ -71,7 +71,7 @@ require("formatter").setup {
         -- Full specification of configurations is down below and in Vim help
         -- files
         return {
-          exe = "fixjson", -- git clone https://aur.archlinux.org/fixjson.git | makepkg -si
+          exe = "fixjson", -- NOTE: git clone https://aur.archlinux.org/fixjson.git | makepkg -si
           args = {
             "--stdin-filename",
             util.get_current_buffer_file_name(),
@@ -86,7 +86,7 @@ require("formatter").setup {
     ["*"] = {
       -- "formatter.filetypes.any" defines default configurations for any
       -- filetype
-      require("formatter.filetypes.any").remove_trailing_whitespace,
+      -- require("formatter.filetypes.any").remove_trailing_whitespace,
     },
   },
 }

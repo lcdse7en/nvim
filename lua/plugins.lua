@@ -275,8 +275,6 @@ return require("packer").startup {
     use { "itchyny/vim-highlighturl", event = "VimEnter" }
     -- Auto format tools
     use { "mhartington/formatter.nvim", config = "require('plugins.formatter')" } -- <leader>lf
-    use { "Pocco81/HighStr.nvim" }
-    use { "mtdl9/vim-log-highlighting" }
 
     -------------------------------------
 
