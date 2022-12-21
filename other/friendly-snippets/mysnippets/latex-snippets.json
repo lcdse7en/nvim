@@ -356,5 +356,12 @@
     "prefix": "mytex",
     "body": ["\\begin{mytex}{${1:title}}", "\t$0", "\\end{mytex}"],
     "description": "description"
+  },
+
+
+  "Custom shell environment": {
+    "prefix": "mysh",
+    "body": ["\\begin{mysh}{${1:title}}", "\t$0", "\\end{mysh}"],
+    "description": "description"
   }
 }
