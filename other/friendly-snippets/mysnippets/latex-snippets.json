@@ -344,5 +344,17 @@
     "prefix": "myqua",
     "body": ["\\begin{equation}", "\t${1:Equation}", "\\end{equation}"],
     "description": "自定义公式环境"
+  },
+
+  "Custom python environment": {
+    "prefix": "mypython",
+    "body": ["\\begin{mypython}{${1:title}}", "\t$0", "\\end{mypython}"],
+    "description": "description"
+  },
+
+  "Custom tex environment": {
+    "prefix": "mytex",
+    "body": ["\\begin{mytex}{${1:title}}", "\t$0", "\\end{mytex}"],
+    "description": "description"
   }
 }
