@@ -313,5 +313,17 @@
     "prefix": "mysh",
     "body": ["\\begin{mysh}{${1:title}}", "\t$0", "\\end{mysh}"],
     "description": "description"
+  },
+
+  "Entry ": {
+    "prefix": "entry",
+    "body": [
+      "\\entry{$1}",
+      "\t{$2}",
+      "\t{}",
+      "\t{}",
+      "$0"
+    ],
+    "description": "entry"
   }
 }
