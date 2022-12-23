@@ -325,7 +325,7 @@
     "prefix": "todolist",
     "body": [
       "\\begin{itemize}",
-      "\\item $0",
+      "\\item \\textcolor{MediumPurple}{$0}",
       "\t\\begin{todolist}",
       "\t\t\\item [\\done] \\textcolor{DarkCyan}{$1}",
       "%\t\t\\item [\\wontfix] \\textcolor{Mahogany}{$2}",
