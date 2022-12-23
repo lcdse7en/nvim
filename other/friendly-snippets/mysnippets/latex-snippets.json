@@ -327,11 +327,19 @@
       "\\begin{itemize}",
       "\\item $0",
       "\t\\begin{todolist}",
-      "\t\t\\item [\\done] $1",
-      "\t\t\\item [\\wontfix] $2",
+      "\t\t\\item [\\done] \\textcolor{DarkCyan}{$1}",
+      "%\t\t\\item [\\wontfix] \\textcolor{Mahogany}{$2}",
       "\t\\end{todolist}",
       "\\end{itemize}"
     ],
     "description": "todolist"
+  },
+
+  "href": {
+    "prefix": "myhref",
+    "body": [
+      "\\href{${1:net}}{${2:name}}"
+    ],
+    "description": "href"
   }
 }
