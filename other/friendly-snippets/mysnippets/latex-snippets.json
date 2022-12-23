@@ -317,13 +317,21 @@
 
   "Entry ": {
     "prefix": "entry",
-    "body": [
-      "\\entry{$1}",
-      "\t{$2}",
-      "\t{}",
-      "\t{}",
-      "$0"
-    ],
+    "body": ["\\entry{$1}", "\t{$2}", "\t{}", "\t{}", "$0"],
     "description": "entry"
+  },
+
+  "todolist ": {
+    "prefix": "todolist",
+    "body": [
+      "\\begin{itemize}",
+      "\\item $0",
+      "\t\\begin{todolist}",
+      "\t\t\\item [\\done] $1",
+      "\t\t\\item [\\wontfix] $2",
+      "\t\\end{todolist}",
+      "\\end{itemize}"
+    ],
+    "description": "todolist"
   }
 }
