@@ -1,6 +1,22 @@
 -- Utilities for creating configurations
 local util = require "formatter.util"
 
+local prettier = function() -- sudo pacman -S prettier
+  return {
+    exe = "/usr/bin/prettier",
+    args = { "--stdin-filepath", vim.fn.shellescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+    stdin = true,
+  }
+end
+
+local eslint = function()
+  return {
+    exe = "eslint",
+    args = { "--stdin", "--stdin-filename", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--fix-to-stdout" },
+    stdin = true,
+  }
+end
+
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
 require("formatter").setup {
   -- Enable or disable logging
@@ -14,70 +30,39 @@ require("formatter").setup {
     lua = {
       -- "formatter.filetypes.lua" defines default configurations for the
       -- "lua" filetype
-      require("formatter.filetypes.lua").stylua,
-
-      -- You can also define your own configuration
       function()
-        -- Supports conditional formatting
-        if util.get_current_buffer_file_name() == "special.lua" then
-          return nil
-        end
-
-        -- Full specification of configurations is down below and in Vim help
-        -- files
         return {
           exe = "stylua",
-          args = {
-            "--search-parent-directories",
-            "--stdin-filepath",
-            util.escape_path(util.get_current_buffer_file_path()),
-            "--",
-            "-",
-          },
+          args = { "--config-path", "~/.config/nvim/.stylua.toml", "-" },
           stdin = true,
         }
       end,
     },
 
     python = {
-      require("formatter.filetypes.python").autopep8,
-
       function()
-        -- Supports conditional formatting
-        if util.get_current_buffer_file_name() == "special.lua" then
-          return nil
-        end
-
-        -- Full specification of configurations is down below and in Vim help
-        -- files
         return {
-          exe = "autopep8",
-          args = {
-            "-",
-          },
-          stdin = 1,
+          exe = "black",
+          args = { "--fast", "-", "--color", "--config", "~/.config/black/pyproject.toml" },
+          stdin = true,
         }
       end,
     },
-    json = {
-      require("formatter.filetypes.json").prettier, -- jsbeautify
-
+    json = { prettier },
+    jsonc = { prettier },
+    css = { prettier },
+    scss = { prettier },
+    html = { prettier },
+    javascript = { prettier },
+    javascriptreact = { prettier },
+    typescript = { prettier },
+    typescriptreact = { prettier },
+    vue = {
       function()
-        -- Supports conditional formatting
-        if util.get_current_buffer_file_name() == "special.lua" then
-          return nil
-        end
-
-        -- Full specification of configurations is down below and in Vim help
-        -- files
         return {
-          exe = "fixjson", -- NOTE: git clone https://aur.archlinux.org/fixjson.git | makepkg -si
-          args = {
-            "--stdin-filename",
-            util.get_current_buffer_file_name(),
-          },
+          exe = "prettier",
+          args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote", "--parser", "vue" },
           stdin = true,
-          try_node_modules = true,
         }
       end,
     },
