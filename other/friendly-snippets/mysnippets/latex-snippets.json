@@ -42,6 +42,7 @@
       "\\usepackage[utf8]{inputenc}",
       "\\usepackage{fontspec, xunicode-addon}",
       "\\usepackage[fleqn]{amsmath}",
+      "\\usepackage{etoolbox}",
       "\\usepackage{amsfonts}",
       "\\usepackage{amssymb}",
       "\\usepackage{pifont}",
