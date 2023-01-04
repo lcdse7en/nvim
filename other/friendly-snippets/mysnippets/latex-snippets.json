@@ -360,6 +360,12 @@
     "description": "choice Environment"
   },
 
+  "stage Environment": {
+    "prefix": "mystage",
+    "body": ["\\begin{stage}(4)", "\t\\item $1", "\t\\item $2", "\\end{stage}"],
+    "description": "stage Environment"
+  },
+
   "textcircled": {
     "prefix": "mytextci",
     "body": ["\\textcircled{${1:number}}"],
