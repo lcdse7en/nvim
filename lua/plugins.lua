@@ -275,6 +275,8 @@ return require("packer").startup {
     use { "itchyny/vim-highlighturl", event = "VimEnter" }
     -- Auto format tools
     use { "mhartington/formatter.nvim", config = "require('plugins.formatter')" } -- <leader>lf
+    use { "xiyaowong/link-visitor.nvim", config = "require('plugins.link-visitor')" }
+    
 
     -------------------------------------
 

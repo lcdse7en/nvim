@@ -337,9 +337,13 @@
 
   "href": {
     "prefix": "myhref",
-    "body": [
-      "\\href{${1:net}}{${2:name}}"
-    ],
+    "body": ["\\href{${1:net}}{${2:name}}"],
     "description": "href"
+  },
+
+  "setminus ": {
+    "prefix": "myminus",
+    "body": ["\\$setminus\\$\t"],
+    "description": "setminus"
   }
 }
