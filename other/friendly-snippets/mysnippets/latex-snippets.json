@@ -347,5 +347,22 @@
     "prefix": "myminus",
     "body": ["\\$\\setminus\\$\t"],
     "description": "setminus"
+  },
+
+  "choice Environment": {
+    "prefix": "mychoi",
+    "body": [
+      "\\begin{choice}(4)",
+      "\t\\item $1",
+      "\t\\item $2",
+      "\\end{choice}"
+    ],
+    "description": "choice Environment"
+  },
+
+  "textcircled": {
+    "prefix": "mytextci",
+    "body": ["\\textcircled{${1:number}}"],
+    "description": "textcircled"
   }
 }
