@@ -11,6 +11,7 @@ local bookmarks = {
   --"https://github.com/rockerBOO/awesome-neovim",
   "https://github.com/lcdse7en",
   "https://wangchujiang.com/linux-command/",
+  "https://detexify.kirelabs.org/classify.html",
   "https://texdoc.org/index.html",
   "https://m.weibo.cn/u/1965284462",
   "https://www.kpopn.com/category/news",
