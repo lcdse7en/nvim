@@ -376,5 +376,11 @@
     "prefix": "mysec",
     "body": ["\\section{$1}"],
     "description": "section"
+  },
+
+  "subsection": {
+    "prefix": "mysubsec",
+    "body": ["\\subsection{$1}"],
+    "description": "subsection"
   }
 }
