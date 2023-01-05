@@ -369,5 +369,11 @@
     "prefix": "mytextci",
     "body": ["\\textcircled{${1:number}}"],
     "description": "textcircled"
+  },
+
+  "mbox": {
+    "prefix": "mymbox",
+    "body": ["\\mbox{$1}"],
+    "description": "mbox"
   }
 }
