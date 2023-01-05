@@ -15,15 +15,13 @@
 
   "Custum section": {
     "prefix": "mysec",
-    "body": [
-      "\\section{${1:Section Name} \\textcolor{green}{\\faIcon{github}} \\textcolor{blue}{\\faIcon{code}} \\faIcon{university} \\textcolor{cyan}{\\faIcon{google-plus}} \\faIcon{at}}"
-    ],
+    "body": ["\\section{$1}"],
     "description": "自定义节标题"
   },
 
   "Custom subsection": {
     "prefix": "mysubs",
-    "body": ["\\subsection{${1:Subsection Name}}"],
+    "body": ["\\subsection{$1}"],
     "description": "自定义字节标题"
   },
 
@@ -370,17 +368,5 @@
     "prefix": "mytextci",
     "body": ["\\textcircled{${1:number}}"],
     "description": "textcircled"
-  },
-
-  "section": {
-    "prefix": "mysec",
-    "body": ["\\section{$1}"],
-    "description": "section"
-  },
-
-  "subsection": {
-    "prefix": "mysubsec",
-    "body": ["\\subsection{$1}"],
-    "description": "subsection"
   }
 }
