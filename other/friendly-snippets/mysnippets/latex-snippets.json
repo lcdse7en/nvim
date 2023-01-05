@@ -75,6 +75,7 @@
       "\\input{documents/sectionformat}",
       "\\input{documents/author_date}",
       "\\input{documents/enumitem}",
+      "\\input{documents/tasks}",
       "\\input{documents/png}",
       "\\input{documents/defcolor}",
       "\\input{documents/mytblr}",
