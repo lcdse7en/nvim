@@ -57,7 +57,7 @@
       "\\usepackage{tabularray}",
       "\\usepackage[slantfont, boldfont]{xeCJK}",
       "\\usepackage{titling}",
-      "\\usepackage{titlesec}",
+      "\\usepackage[explicit]{titlesec}",
       "\\usepackage{metalogo}",
       "\\usepackage{chngcntr}",
       "\\usepackage{fontawesome5}",
@@ -370,5 +370,11 @@
     "prefix": "mytextci",
     "body": ["\\textcircled{${1:number}}"],
     "description": "textcircled"
+  },
+
+  "section": {
+    "prefix": "mysec",
+    "body": ["\\section{$1}"],
+    "description": "section"
   }
 }
