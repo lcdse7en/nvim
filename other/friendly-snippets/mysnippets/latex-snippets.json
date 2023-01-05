@@ -375,5 +375,11 @@
     "prefix": "mymbox",
     "body": ["\\mbox{$1}"],
     "description": "mbox"
+  },
+
+  "flalign Environment": {
+    "prefix": "myfla",
+    "body": ["\\begin{flalign}", "\t$1", "\\end{flalign}"],
+    "description": "flalign Environment"
   }
 }
