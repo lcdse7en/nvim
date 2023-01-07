@@ -261,7 +261,9 @@ return require("packer").startup {
     use { "ggandor/flit.nvim", config = "require('plugins.flit')" } -- NOTE: f
     -- use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
     use { "jayp0521/mason-null-ls.nvim" }
-    use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
+    -- use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
+    -- use { "kkharji/lspsaga.nvim", branch = "nvim6.0" or "nvim51" }
+    use { "kkharji/lspsaga.nvim", config = "require('plugins.lspsaga')" }
     use { "inkarkat/vim-ReplaceWithRegister" }
     use { "christoomey/vim-tmux-navigator" }
     use { "szw/vim-maximizer" }
@@ -276,7 +278,6 @@ return require("packer").startup {
     -- Auto format tools
     use { "mhartington/formatter.nvim", config = "require('plugins.formatter')" } -- <leader>lf
     use { "xiyaowong/link-visitor.nvim", config = "require('plugins.link-visitor')" }
-    
 
     -------------------------------------
 

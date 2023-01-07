@@ -32,6 +32,7 @@ mason_lsp.setup {
     "sumneko_lua",
     "tailwindcss",
     "tsserver",
+    "yamlls",
     "vuels",
     "volar",
     "prismals",
