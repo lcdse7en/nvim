@@ -48,6 +48,14 @@ require("formatter").setup {
         }
       end,
     },
+    go = {
+      function()
+        return {
+          exe = "gofmt",
+          stdin = true,
+        }
+      end,
+    },
     json = { prettier },
     jsonc = { prettier },
     css = { prettier },
