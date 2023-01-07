@@ -13,6 +13,7 @@ local bookmarks = {
   "https://wangchujiang.com/linux-command/",
   "https://detexify.kirelabs.org/classify.html",
   "https://texdoc.org/index.html",
+  "https://studygolang.com/pkgdoc",
   "https://m.weibo.cn/u/1965284462",
   "https://www.kpopn.com/category/news",
   "https://github.com/moadAlami/dotfiles/tree/master",
