@@ -35,6 +35,7 @@ mason_lsp.setup {
     "vuels",
     "volar",
     "prismals",
+    "gopls", --  NOTE: export GOPROXY=https://proxy.golang.com.cn,direct
     "pyright",
     -- "ltex",
     "texlab",
@@ -192,6 +193,12 @@ lspconfig.texlab.setup {
   init_options = require("lsp.servers.tex").init_options,
   on_attach = on_attach,
 }
+lspconfig.gopls.setup {
+  filetypes = require("lsp.servers.gopls").filetypes,
+  handlers = handlers,
+  init_options = require("lsp.servers.gopls").init_options,
+  on_attach = on_attach,
+}
 
 for _, server in ipairs {
   "bashls",
@@ -202,6 +209,7 @@ for _, server in ipairs {
   "prismals",
   "pyright",
   "sumneko_lua",
+  "gopls",
   "texlab",
   "marksman",
   "jsonls",
