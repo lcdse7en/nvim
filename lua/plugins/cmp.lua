@@ -19,12 +19,6 @@ if not snip_status_ok then
   return
 end
 
-lspkind.init {
-  symbol_map = {
-    Copilot = "",
-  },
-}
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 require("luasnip/loaders/from_snipmate").lazy_load { paths = { "./snippets" } }
 require("luasnip/loaders/from_vscode").load {
@@ -64,6 +58,15 @@ local buffer_option = {
 }
 
 cmp.setup {
+  preselect = cmp.PreselectMode.Item,
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  experimental = {
+    ghost_text = true,
+  },
+
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -74,8 +77,8 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ["<Up>"] = cmp.mapping.select_prev_item(),
     ["<Down>"] = cmp.mapping.select_next_item(),
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-2), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(2), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -240,3 +243,22 @@ tabnine:setup {
   snipper_placeholder = "..",
   ignored_file_types = {},
 }
+
+
+cmp.setup.filetype({ "TelescopePrompt" }, {
+    sources = {},
+})
+cmp.setup.filetype({ "vim", "markdown", "tex" }, {
+    sources = {
+        {
+          name = "look",
+          keyword_length = 5,
+          max_item_count = 5,
+          option = {
+              convert_case = true,
+              loud = true,
+              dict = '~/.local/share/dict/words'
+          },
+        },
+    },
+})

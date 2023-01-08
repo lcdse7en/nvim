@@ -280,6 +280,7 @@ return require("packer").startup {
     use { "xiyaowong/link-visitor.nvim", config = "require('plugins.link-visitor')" }
     use { "tjdevries/colorbuddy.nvim" }
     use { "samodostal/image.nvim", requires = { "nvim-lua/plenary.nvim" }, config = "require('plugins.image')" }
+    use { "octaltree/cmp-look" }
 
     -------------------------------------
 
