@@ -7,6 +7,9 @@ end
 -- │ Setup                                                    │
 -- ╰──────────────────────────────────────────────────────────╯
 todo_comments.setup {
+  signs = true, -- show icons in the signs column
+  sign_priority = 8, -- sign priority
+  -- keywords recognized as todo comments
   keywords = {
     -- alt ： 别名
     FIX = {
@@ -20,6 +23,7 @@ todo_comments.setup {
     PERF = { icon = " ", color = "#FC9868", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = " ", color = "#10B981", alt = { "INFO" } },
   },
+  merge_keywords = true, -- when true, custom keywords will be merged with the defaults
 }
 -- ╭──────────────────────────────────────────────────────────╮
 -- │  Keymappings                                             │
