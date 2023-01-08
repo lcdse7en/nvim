@@ -110,6 +110,7 @@ return require("packer").startup {
     -- General
     use { "AndrewRadev/switch.vim" }
     use { "AndrewRadev/splitjoin.vim" }
+    --  NOTE: Comment
     use { "numToStr/Comment.nvim", config = "require('plugins.comment')" }
     use { "LudoPinelli/comment-box.nvim", config = "require('plugins.comment-box')" }
     use { "akinsho/nvim-toggleterm.lua", branch = "main", config = "require('plugins.toggleterm')" }
