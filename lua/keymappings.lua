@@ -126,6 +126,7 @@ keymap("v", "<Leader>pr", "<cmd>lua require('spectre').open_visual()<CR>")
 
 -- LSP
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", silent)
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", silent)
 keymap("n", "gr", "<cmd>lua vim.lsp.buf.references({ includeDeclaration = false })<CR>", silent)
 keymap("n", "<C-Space>", "<cmd>lua vim.lsp.buf.code_action()<CR>", silent)
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", silent)

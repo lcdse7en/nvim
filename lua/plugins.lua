@@ -166,7 +166,7 @@ return require("packer").startup {
     }
     use { "Shatur/neovim-session-manager", config = "require('plugins.session-manager')" }
 
-    -- surround
+    -- NOTE: surround
     use {
       -- ysiw ds" cs'" ys$"
       "kylechui/nvim-surround",
@@ -281,6 +281,8 @@ return require("packer").startup {
     use { "tjdevries/colorbuddy.nvim" }
     use { "samodostal/image.nvim", requires = { "nvim-lua/plenary.nvim" }, config = "require('plugins.image')" }
     use { "octaltree/cmp-look" }
+    use { "f3fora/cmp-spell" }
+    
 
     -------------------------------------
 

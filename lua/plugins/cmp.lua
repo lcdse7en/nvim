@@ -19,7 +19,6 @@ if not snip_status_ok then
   return
 end
 
-
 require("luasnip/loaders/from_snipmate").lazy_load { paths = { "./snippets" } }
 require("luasnip/loaders/from_vscode").load {
   paths = { "~/.config/nvim/other/friendly-snippets" },
@@ -43,7 +42,7 @@ local source_mapping = {
   path = EcoVim.icons.folderOpen2,
   treesitter = EcoVim.icons.tree,
   zsh = EcoVim.icons.terminal .. "ZSH",
-  look = "[Dict]",
+  look = EcoVim.icons.paragraph .. "LOOK",
 }
 
 local buffer_option = {
@@ -77,8 +76,8 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ["<Up>"] = cmp.mapping.select_prev_item(),
     ["<Down>"] = cmp.mapping.select_next_item(),
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
-    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-2), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(2), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -175,13 +174,22 @@ cmp.setup {
     { name = "calc", priority = 3 },
     { name = "vsnip" },
     {
-      name = "look", 
-      priority = 9, 
-      keyword_length = 4, 
-      option = { 
-          convert_case = true, 
-          loud = true, 
-          -- dict = "~/.local/share/dict/word
+      name = "look",
+      priority = 9,
+      keyword_length = 2,
+      option = {
+        convert_case = true,
+        loud = true,
+        dict = "/home/se7en/.local/share/dict/words",
+      },
+    },
+    {
+      name = "spell",
+      option = {
+        keep_all_entries = false,
+        enable_in_context = function()
+          return true
+        end,
       },
     },
   },
@@ -244,21 +252,20 @@ tabnine:setup {
   ignored_file_types = {},
 }
 
-
-cmp.setup.filetype({ "TelescopePrompt" }, {
-    sources = {},
-})
-cmp.setup.filetype({ "vim", "markdown", "tex" }, {
-    sources = {
-        {
-          name = "look",
-          keyword_length = 5,
-          max_item_count = 5,
-          option = {
-              convert_case = true,
-              loud = true,
-              dict = '~/.local/share/dict/words'
-          },
-        },
-    },
-})
+-- cmp.setup.filetype({ "TelescopePrompt" }, {
+--   sources = {},
+-- })
+-- cmp.setup.filetype({ "vim", "markdown", "tex" }, {
+--   sources = {
+--     {
+--       name = "look",
+--       keyword_length = 5,
+--       max_item_count = 5,
+--       option = {
+--         convert_case = true,
+--         loud = true,
+--         dict = "/home/se7en/.local/share/dict/words",
+--       },
+--     },
+--   },
+-- })
