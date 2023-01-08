@@ -61,3 +61,40 @@ vim.cmd [[
     augroup end
 
 ]]
+
+vim.cmd [[
+    augroup title_py
+      autocmd!
+      autocmd BufNewFile *.py exec":call SetTitle_py()"
+        func SetTitle_py()
+          if expand("%:e") == "py"
+            call setline(1, "\# -*- coding: utf-8 -*-")
+            normal G
+            normal o
+            normal o
+          endif
+        endfunc
+      autocmd BufNewFile * normal G
+    augroup end
+]]
+
+vim.cmd [[
+    augroup title_sh
+      autocmd!
+      autocmd BufNewFile *.sh exec":call SetTitle_sh()"
+        func SetTitle_sh()
+          if expand("%:e") == "sh"
+            call setline(1, "#!/usr/bin/sh")
+            call setline(2, "#")
+            call setline(3, "#*******************************************")
+            call setline(4, "# Author:      lcdse7en                    *")
+            call setline(5, "# E-mail:      2353442022@qq.com           *")
+            call setline(6, "# Date:        ".strftime("%Y-%m-%d")."                  *")
+            call setline(7, "# Description:                             *")
+            call setline(8, "#*******************************************")
+            call setline(9, "")
+            call setline(10, "")
+          endif
+        endfunc
+      autocmd BufNewFile * normal G
+]]

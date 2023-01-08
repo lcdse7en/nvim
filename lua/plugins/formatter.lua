@@ -60,7 +60,7 @@ require("formatter").setup {
       function()
         return {
           exe = "shfmt",
-          args = { "-i", shiftwidth },
+          args = { "-i", "2" },
           stdin = true,
         }
       end,

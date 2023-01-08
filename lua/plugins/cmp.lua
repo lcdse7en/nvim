@@ -1,5 +1,8 @@
 -- Requires
-local lspkind = require "lspkind"
+local ok, lspkind = pcall(require, "lspkind")
+if not ok then
+  return
+end
 
 local cmp_tabnine_status_ok, tabnine = pcall(require, "cmp_tabnine.config")
 if not cmp_tabnine_status_ok then
@@ -15,6 +18,13 @@ local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
   return
 end
+
+lspkind.init {
+  symbol_map = {
+    Copilot = "",
+  },
+}
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 require("luasnip/loaders/from_snipmate").lazy_load { paths = { "./snippets" } }
 require("luasnip/loaders/from_vscode").load {
@@ -39,6 +49,7 @@ local source_mapping = {
   path = EcoVim.icons.folderOpen2,
   treesitter = EcoVim.icons.tree,
   zsh = EcoVim.icons.terminal .. "ZSH",
+  look = "[Dict]",
 }
 
 local buffer_option = {
@@ -61,8 +72,10 @@ cmp.setup {
   },
 
   mapping = cmp.mapping.preset.insert {
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
-    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<Up>"] = cmp.mapping.select_prev_item(),
+    ["<Down>"] = cmp.mapping.select_next_item(),
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-2), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(2), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -72,7 +85,7 @@ cmp.setup {
       c = cmp.mapping.close(),
     },
     --["<CR>"] = cmp.mapping.confirm { select = EcoVim.plugins.completion.select_first_on_enter },
-    ["<CR>"] = cmp.mapping.confirm { select = true },
+    ["<CR>"] = cmp.mapping.confirm { select = false },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -80,8 +93,8 @@ cmp.setup {
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-      elseif check_backspace() then
-        fallback()
+      elseif has_words_before() then
+        cmp.complete()
       else
         fallback()
       end
@@ -158,6 +171,16 @@ cmp.setup {
     { name = "emoji", priority = 50 },
     { name = "calc", priority = 3 },
     { name = "vsnip" },
+    {
+      name = "look", 
+      priority = 9, 
+      keyword_length = 4, 
+      option = { 
+          convert_case = true, 
+          loud = true, 
+          -- dict = "~/.local/share/dict/word
+      },
+    },
   },
 
   sorting = {

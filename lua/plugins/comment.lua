@@ -8,9 +8,9 @@ comment.setup {
   opleader = {
     -- line-comment keymap
     -- line = "gc",
-    line = "gc",
+    line = "<leader>c",
     -- block-comment keymap
-    block = "gb",
+    block = "<leader>b",
   },
 
   -- Create basic (operator-pending) and extended mappings for NORMAL + VISUAL mode
