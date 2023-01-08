@@ -56,6 +56,15 @@ require("formatter").setup {
         }
       end,
     },
+    sh = {
+      function()
+        return {
+          exe = "shfmt",
+          args = { "-i", shiftwidth },
+          stdin = true,
+        }
+      end,
+    },
     json = { prettier },
     jsonc = { prettier },
     css = { prettier },

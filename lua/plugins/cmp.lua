@@ -71,7 +71,8 @@ cmp.setup {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
-    ["<CR>"] = cmp.mapping.confirm { select = EcoVim.plugins.completion.select_first_on_enter },
+    --["<CR>"] = cmp.mapping.confirm { select = EcoVim.plugins.completion.select_first_on_enter },
+    ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -153,8 +154,8 @@ cmp.setup {
     { name = "luasnip", priority = 7, max_item_count = 8 },
     { name = "buffer", priority = 7, keyword_length = 5, option = buffer_option, max_item_count = 8 },
     { name = "nvim_lua", priority = 5 },
-    { name = "path", priority = 4 },
-    { name = "emoji", priority = 4 },
+    { name = "path", priority = 99 },
+    { name = "emoji", priority = 50 },
     { name = "calc", priority = 3 },
     { name = "vsnip" },
   },
@@ -173,7 +174,7 @@ cmp.setup {
 
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
+    select = true,
   },
 
   window = {

@@ -140,12 +140,12 @@ local normal_mode_mappings = {
 
   l = {
     name = "LSP",
-    a = { "code action" },
+    a = { "<cmd>Lspsaga code_action<cr>", "Lspsaga code_action" },
     d = { "<cmd>TroubleToggle<CR>", "local diagnostics" },
     D = { "<cmd>Telescope diagnostics wrap_results=true<CR>", "workspace diagnostics" },
-    f = { "<cmd>Format<CR>", "Format" },
+    f = { "<cmd>Lspsaga lsp_finder<CR>", "Lspsaga lsp_finder" },
     l = { "line diagnostics" },
-    r = { "rename" },
+    r = { "<cmd>Lspsaga rename<cr>", "Lspsaga rename" },
     t = { "<cmd>LspToggleAutoFormat<CR>", "toggle format on save" },
   },
 

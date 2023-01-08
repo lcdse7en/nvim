@@ -110,8 +110,7 @@ return require("packer").startup {
     -- General
     use { "AndrewRadev/switch.vim" }
     use { "AndrewRadev/splitjoin.vim" }
-    --use { "numToStr/Comment.nvim", tag = "v0.7.0", config = "require('plugins.comment')" }
-    use { "b3nj5m1n/kommentary", config = "require('plugins.kommentary')" }
+    use { "numToStr/Comment.nvim", config = "require('plugins.comment')" }
     use { "LudoPinelli/comment-box.nvim", config = "require('plugins.comment-box')" }
     use { "akinsho/nvim-toggleterm.lua", branch = "main", config = "require('plugins.toggleterm')" }
     use { "tpope/vim-repeat" }
@@ -261,9 +260,9 @@ return require("packer").startup {
     use { "ggandor/flit.nvim", config = "require('plugins.flit')" } -- NOTE: f
     -- use { "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = "require('plugins.null-ls')" }
     use { "jayp0521/mason-null-ls.nvim" }
-    -- use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
+    use { "glepnir/lspsaga.nvim", config = "require('plugins.lspsaga')" }
     -- use { "kkharji/lspsaga.nvim", branch = "nvim6.0" or "nvim51" }
-    use { "kkharji/lspsaga.nvim", config = "require('plugins.lspsaga')" }
+    -- use { "kkharji/lspsaga.nvim", config = "require('plugins.lspsaga')" }
     use { "inkarkat/vim-ReplaceWithRegister" }
     use { "christoomey/vim-tmux-navigator" }
     use { "szw/vim-maximizer" }
@@ -278,6 +277,8 @@ return require("packer").startup {
     -- Auto format tools
     use { "mhartington/formatter.nvim", config = "require('plugins.formatter')" } -- <leader>lf
     use { "xiyaowong/link-visitor.nvim", config = "require('plugins.link-visitor')" }
+    use { "z0mbix/vim-shfmt" }
+    -- use { "yioneko/nvim-yati", tag = "*", requires = "nvim-treesitter/nvim-treesitter" }
 
     -------------------------------------
 

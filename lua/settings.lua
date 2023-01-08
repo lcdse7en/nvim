@@ -20,7 +20,8 @@ local options = {
   showtabline = 2, --- Always show tabs
   signcolumn = "yes:2", --- Add extra sign column next to line number
   smartcase = true, --- Uses case in search
-  smartindent = true, --- Makes indenting smart
+  -- smartindent = true, --- Makes indenting smart
+  autoindent = true, --- Good auto indent
   smarttab = true, --- Makes tabbing smarter will realize you have 2 vs 4
   softtabstop = 2, --- Insert 2 spaces for a tab
   splitright = true, --- Vertical splits will automatically be to the right
@@ -35,7 +36,6 @@ local options = {
   wrap = true, --- Display long lines as just one line
   writebackup = false, --- Not needed
   -- Neovim defaults
-  autoindent = true, --- Good auto indent
   backspace = "indent,eol,start", --- Making sure backspace works
   backup = false, --- Recommended by coc
   conceallevel = 0, --- Show `` in markdown files
