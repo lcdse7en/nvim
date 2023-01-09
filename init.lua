@@ -16,3 +16,4 @@ require "lsp.functions"
 
 require "snippets.react"
 require "autocommands"
+require("hlslens").setup()

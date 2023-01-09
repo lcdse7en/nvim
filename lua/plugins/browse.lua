@@ -33,6 +33,7 @@ local bookmarks = {
   --"https://suckless.org/",
   "http://kkhanju.top/",
   "https://www.extfans.com/",
+  "https://www.nerdfonts.com/cheat-sheet",
   "https://unicode.org/emoji/charts/full-emoji-list.html",
   "https://www.colorhexa.com/color-names",
   --"https://github.com/davatorium/rofi-themes",

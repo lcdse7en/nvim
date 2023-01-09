@@ -269,8 +269,9 @@ return require("packer").startup {
     use { "szw/vim-maximizer" }
     use {
       "kevinhwang91/nvim-hlslens",
+      keys = { { "n", "*" }, { "n", "#" }, { "n", "n" }, { "n", "N" } },
       branch = "main",
-      config = "require('plugins.hlslens')",
+      -- config = "require('plugins.hlslens')",
     }
     use { "tweekmonster/startuptime.vim" }
     -- Highlight URLs inside vim
@@ -282,7 +283,6 @@ return require("packer").startup {
     use { "samodostal/image.nvim", requires = { "nvim-lua/plenary.nvim" }, config = "require('plugins.image')" }
     use { "octaltree/cmp-look" }
     use { "f3fora/cmp-spell" }
-    
 
     -------------------------------------
 
