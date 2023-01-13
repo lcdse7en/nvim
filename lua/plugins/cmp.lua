@@ -43,6 +43,7 @@ local source_mapping = {
   treesitter = EcoVim.icons.tree,
   zsh = EcoVim.icons.terminal .. "ZSH",
   look = EcoVim.icons.paragraph .. "LOOK",
+  spell = EcoVim.icons.paragraph .. "Spell",
 }
 
 local buffer_option = {
@@ -180,7 +181,7 @@ cmp.setup {
       option = {
         convert_case = true,
         loud = true,
-        dict = "/home/se7en/.local/share/dict/words",
+        dict = "/home/se7en/.local/share/dict/words.txt",
       },
     },
     {

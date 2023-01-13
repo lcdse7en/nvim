@@ -36,6 +36,8 @@ local bookmarks = {
   "https://www.nerdfonts.com/cheat-sheet",
   "https://unicode.org/emoji/charts/full-emoji-list.html",
   "https://www.colorhexa.com/color-names",
+  "https://github.com/wsgggws", -- Emacs
+  "https://www.ipaddress.com/",
   --"https://github.com/davatorium/rofi-themes",
   -- "https://github.com/glepnir",
 }

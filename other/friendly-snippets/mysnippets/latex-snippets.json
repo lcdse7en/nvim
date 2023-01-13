@@ -61,7 +61,7 @@
       "\\usepackage{fontawesome5}",
       "\\usepackage{newclude}",
       "\\usepackage{minted} % sudo pip install pygments % --shell-escape",
-      "\\usepackage{tabularray}",
+      "\\usepackage{pst-plot}",
       "\\usepackage[customcolors, shade]{hf-tikz}",
       "\\usepackage{tkz-euclide}",
       "\\usepackage{codebox}",
@@ -96,7 +96,7 @@
       "\\input{documents/abstract}",
       "%\\input{documents/entry}",
       "",
-      "\\input{code/${1:test}}",
+      "%input{code/${1:test}}",
       "\\end{document}"
     ],
     "description": "自定义documentclass环境"
